@@ -3,263 +3,261 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prajwal Sathyanarayana — Data Scientist</title>
+  <title>Prajwal Sathyanarayana — AI Engineer</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <!-- Animated background grid -->
-  <div class="bg-grid"></div>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
+  <div class="paper-texture"></div>
 
-  <!-- Navigation -->
+  <!-- NAV -->
   <nav id="navbar">
-    <div class="nav-logo">
-      <span class="nav-initials">PS</span>
+    <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <span class="nav-wordmark">Prajwal <em>Sathyanarayana</em></span>
     </div>
     <ul class="nav-links">
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#about"        class="nav-link">About</a></li>
+      <li><a href="#experience"  class="nav-link">Experience</a></li>
+      <li><a href="#skills"      class="nav-link">Skills</a></li>
+      <li><a href="#projects"    class="nav-link">Projects</a></li>
       <li><a href="#publications" class="nav-link">Publications</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#education"   class="nav-link">Education</a></li>
     </ul>
+    <a href="Prajwal Sathyanarayana Resume.pdf" download class="nav-resume" id="navResume">&#8595; Resume</a>
     <a href="mailto:prajwals@arizona.edu" class="nav-cta">Hire Me</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="#about" class="mob-link">About</a></li>
-      <li><a href="#experience" class="mob-link">Experience</a></li>
-      <li><a href="#skills" class="mob-link">Skills</a></li>
-      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#about"        class="mob-link">About</a></li>
+      <li><a href="#experience"  class="mob-link">Experience</a></li>
+      <li><a href="#skills"      class="mob-link">Skills</a></li>
+      <li><a href="#projects"    class="mob-link">Projects</a></li>
       <li><a href="#publications" class="mob-link">Publications</a></li>
-      <li><a href="#education" class="mob-link">Education</a></li>
+      <li><a href="#education"   class="mob-link">Education</a></li>
+      <li><a href="Prajwal Sathyanarayana Resume.pdf" download class="mob-link mob-resume">&#8595; Download Resume</a></li>
     </ul>
   </div>
 
-  <!-- ══════════════ HERO ══════════════ -->
+  <!-- HERO -->
   <section id="hero">
     <div class="hero-inner">
-      <div class="hero-label reveal">
-        <span class="dot"></span> Available for opportunities
+      <div class="hero-meta reveal">
+        <span class="issue-label">Portfolio · Vol. I · 2026</span>
+        <span class="issue-rule"></span>
+        <span class="issue-tag">AI Engineering &amp; Machine Learning</span>
       </div>
-      <h1 class="hero-name reveal">
-        Prajwal<br/><em>Sathyanarayana</em>
-      </h1>
-      <p class="hero-title reveal">
-        <span class="typed-text"></span><span class="cursor">|</span>
-      </p>
-      <p class="hero-sub reveal">
-        Building end-to-end ML &amp; AI systems that turn messy data into decisions.<br/>
-        3+ years shipping models at scale — from credit risk to reinforcement learning.
-      </p>
-      <div class="hero-actions reveal">
-        <a href="#experience" class="btn-primary">View My Work</a>
-        <a href="mailto:prajwals@arizona.edu" class="btn-secondary">Get In Touch</a>
-      </div>
-      <div class="hero-links reveal">
-        <a href="https://linkedin.com/in/prajwals21" target="_blank" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/PRAJWAL2108" target="_blank" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-          GitHub
-        </a>
-        <a href="https://orcid.org/0009-0007-0939-7736" target="_blank" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.862 3.872-3.722 0-2.016-1.284-3.722-3.863-3.722h-2.306z"/></svg>
-          ORCID
-        </a>
-        <a href="mailto:prajwals@arizona.edu" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
-          Email
-        </a>
+      <div class="hero-grid">
+        <div class="hero-main">
+          <h1 class="hero-name reveal">
+            <span class="name-first">Prajwal</span>
+            <em class="name-last">Sathyanarayana</em>
+          </h1>
+          <p class="hero-deck reveal">
+            Building and shipping AI/ML powered products end to end —<br/>
+            LLM systems, agentic workflows, and models at scale.
+          </p>
+          <div class="hero-byline reveal">
+            <span class="typed-text"></span><span class="cursor">|</span>
+          </div>
+          <div class="hero-actions reveal">
+            <a href="#experience" class="btn-primary">View My Work</a>
+            <a href="Prajwal Sathyanarayana Resume.pdf" download class="btn-ghost">&#8595; Download Resume</a>
+            <a href="mailto:prajwals@arizona.edu" class="btn-ghost">Get In Touch &rarr;</a>
+          </div>
+          <div class="hero-socials reveal">
+            <a href="https://linkedin.com/in/prajwals21" target="_blank" class="social-link">LinkedIn</a>
+            <span class="social-sep">&middot;</span>
+            <a href="https://github.com/PRAJWAL2108" target="_blank" class="social-link">GitHub</a>
+            <span class="social-sep">&middot;</span>
+            <a href="https://orcid.org/0009-0007-0939-7736" target="_blank" class="social-link">ORCID</a>
+            <span class="social-sep">&middot;</span>
+            <a href="https://scholar.google.com/citations?user=8vROA_4AAAAJ&hl=en" target="_blank" class="social-link">Scholar</a>
+          </div>
+        </div>
+        <aside class="hero-aside reveal">
+          <div class="aside-stat">
+            <span class="aside-num">3<sup>+</sup></span>
+            <span class="aside-label">Years of Experience</span>
+          </div>
+          <div class="aside-rule"></div>
+          <div class="aside-stat">
+            <span class="aside-num">40<sup>%</sup></span>
+            <span class="aside-label">Manual Effort Reduced</span>
+          </div>
+          <div class="aside-rule"></div>
+          <div class="aside-stat">
+            <span class="aside-num">18<sup>%</sup></span>
+            <span class="aside-label">Risk Detection Improved</span>
+          </div>
+          <div class="aside-rule"></div>
+          <div class="aside-stat">
+            <span class="aside-num">15</span>
+            <span class="aside-label">Total Citations</span>
+          </div>
+        </aside>
       </div>
     </div>
-    <div class="hero-stats reveal">
-      <div class="stat">
-        <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Years Experience</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-num" data-count="40">0</span><span class="stat-plus">%</span>
-        <span class="stat-label">Manual Effort Reduced</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-num" data-count="18">0</span><span class="stat-plus">%</span>
-        <span class="stat-label">Risk Detection Improved</span>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
+    <div class="hero-footer-rule"></div>
   </section>
 
-  <!-- ══════════════ ABOUT ══════════════ -->
+  <!-- ABOUT -->
   <section id="about">
     <div class="container">
-      <div class="section-label reveal"><span class="label-num">01</span> About Me</div>
+      <div class="section-header reveal">
+        <span class="section-num">01</span>
+        <span class="section-rule"></span>
+        <h2 class="section-title">About Me</h2>
+      </div>
       <div class="about-grid">
         <div class="about-text reveal">
-          <h2 class="section-heading">I turn data chaos<br/><em>into clarity.</em></h2>
-          <p>I'm a Data Scientist pursuing my Master's at the University of Arizona, with 3+ years of hands-on experience building and deploying end-to-end ML and AI-driven systems. My work spans credit risk modeling, reinforcement learning pipelines, revenue forecasting, and AI-first workflow automation.</p>
-          <p>I care deeply about the full lifecycle — from translating ambiguous stakeholder needs into clear specs, through building reliable pipelines, to shipping models that actually make a difference in production. I'm fluent in Python, SQL, and AWS, and passionate about LLM systems, RAG, and agent-like architectures.</p>
-          <p>Currently based in Tucson, AZ, open to full-time roles in Data Science, ML Engineering, and AI Product.</p>
-          <div class="about-chips">
-            <span class="chip">Machine Learning</span>
-            <span class="chip">LLM Systems</span>
-            <span class="chip">Data Engineering</span>
-            <span class="chip">AWS</span>
-            <span class="chip">Causal Analysis</span>
+          <h3 class="about-lede">I build AI systems<br/><em>that ship.</em></h3>
+          <p>I'm an AI Engineer pursuing my Master's in Data Science at the University of Arizona (GPA 3.9), with 3+ years of experience building and shipping AI/ML powered products end to end — including LLM-based systems and agentic workflows.</p>
+          <p>Strong working understanding of prompt engineering, tool calling, retrieval and context construction, memory usage, and model evaluation. My work spans document intelligence pipelines, credit risk modeling, RL experiment infrastructure, and revenue forecasting automation.</p>
+          <p>Currently based in Tucson, AZ, open to full-time AI Engineer, ML Engineer, and Applied Scientist roles.</p>
+          <div class="about-tags">
+            <span class="tag-item">LLM Systems</span>
+            <span class="tag-item">Agentic Workflows</span>
+            <span class="tag-item">RAG &amp; Retrieval</span>
+            <span class="tag-item">Prompt Engineering</span>
+            <span class="tag-item">AWS</span>
+            <span class="tag-item">Model Evaluation</span>
           </div>
         </div>
         <div class="about-card reveal">
-          <div class="card-inner">
-            <div class="card-accent"></div>
-            <div class="card-info">
-              <div class="info-row">
-                <span class="info-label">Location</span>
-                <span class="info-val">Tucson, AZ</span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">Education</span>
-                <span class="info-val">M.S. Data Science, UA</span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">Focus</span>
-                <span class="info-val">ML / AI Systems</span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">Phone</span>
-                <span class="info-val">520-609-6114</span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">Email</span>
-                <span class="info-val">prajwals@arizona.edu</span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">GitHub</span>
-                <span class="info-val"><a href="https://github.com/PRAJWAL2108" target="_blank" style="color:var(--amber)">PRAJWAL2108</a></span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">ORCID</span>
-                <span class="info-val"><a href="https://orcid.org/0009-0007-0939-7736" target="_blank" style="color:#a6ce39;font-size:0.75rem">0009-0007-0939-7736</a></span>
-              </div>
-              <div class="info-row">
-                <span class="info-label">Status</span>
-                <span class="info-val available">Available</span>
-              </div>
-            </div>
-            <a href="mailto:prajwals@arizona.edu" class="card-btn">Contact Me →</a>
+          <div class="card-masthead">Contact &amp; Details</div>
+          <div class="card-body">
+            <div class="card-row"><span class="card-label">Location</span><span class="card-val">Tucson, AZ</span></div>
+            <div class="card-row"><span class="card-label">Degree</span><span class="card-val">M.S. Data Science</span></div>
+            <div class="card-row"><span class="card-label">University</span><span class="card-val">University of Arizona</span></div>
+            <div class="card-row"><span class="card-label">Phone</span><span class="card-val masked-contact" data-value="520-609-6114" data-type="tel" title="Click to reveal">520-***-****&thinsp;&#128274;</span></div>
+            <div class="card-row"><span class="card-label">Email</span><span class="card-val masked-contact" data-value="prajwals@arizona.edu" data-type="email" title="Click to reveal">p·······@arizona.edu&thinsp;&#128274;</span></div>
+            <div class="card-row"><span class="card-label">GitHub</span><span class="card-val"><a href="https://github.com/PRAJWAL2108" target="_blank">PRAJWAL2108</a></span></div>
+            <div class="card-row"><span class="card-label">ORCID</span><span class="card-val"><a href="https://orcid.org/0009-0007-0939-7736" target="_blank">0009-0007-0939-7736</a></span></div>
+            <div class="card-row"><span class="card-label">Status</span><span class="card-val available">Available</span></div>
           </div>
+          <a href="mailto:prajwals@arizona.edu" class="card-cta">Send a Message &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════ EXPERIENCE ══════════════ -->
-  <section id="experience">
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section-tinted">
     <div class="container">
-      <div class="section-label reveal"><span class="label-num">02</span> Experience</div>
-      <h2 class="section-heading reveal">Where I've <em>worked.</em></h2>
+      <div class="section-header reveal">
+        <span class="section-num">02</span>
+        <span class="section-rule"></span>
+        <h2 class="section-title">Experience</h2>
+      </div>
       <div class="timeline">
 
-        <div class="timeline-item reveal">
-          <div class="tl-marker"></div>
-          <div class="tl-date">Aug 2025 – Dec 2025</div>
+        <div class="tl-item reveal">
+          <div class="tl-meta">
+            <span class="tl-date">Jan 2026 &ndash; Present</span>
+            <span class="tl-category">EdTech</span>
+          </div>
           <div class="tl-card">
-            <div class="tl-header">
+            <div class="tl-card-top">
               <div>
-                <h3 class="tl-role">Data Analyst <span class="tl-type">Externship</span></h3>
-                <p class="tl-company">Banner Health · Eller Partnership Office, University of Arizona</p>
+                <h3 class="tl-role">AI Engineer <span class="tl-badge">Capstone</span></h3>
+                <p class="tl-org">Axio Education &middot; INFO 698</p>
               </div>
-              <div class="tl-badge">Healthcare</div>
             </div>
             <ul class="tl-bullets">
-              <li>Designed and delivered AI-first workflows for complex knowledge work by building Python- and SQL-based ETL pipelines for encounter, ZIP, provider, and procedure data — <strong>improving data accessibility by 35%</strong> with git-based version control.</li>
-              <li>Translated messy stakeholder needs into clear specs, prompts, and expected behaviors, enabling standardized reporting structures across downstream analytics.</li>
-              <li>Automated reporting workflows using Python, <strong>reducing manual reconciliation effort by 40%</strong> while improving reliability and usefulness of surgical volume insights.</li>
+              <li>Engineered an async FastAPI document intelligence pipeline using PyMuPDF and pdfplumber, achieving <strong>&ge;88% table extraction accuracy</strong> and &lt;2s median processing time across 4 document modalities.</li>
+              <li>Integrated Gemini 1.5 Vision multimodal LLM to generate anchored margin feedback with per-region confidence scoring, <strong>automating evaluation of 10+ questions per submission</strong> at &ge;87% model confidence.</li>
+              <li>Built a Gemini-powered document classification layer that auto-routes submissions to the correct grading pipeline, <strong>eliminating manual classification for 100%</strong> of self-contained assignment formats.</li>
             </ul>
-            <div class="tl-tags">
-              <span>Python</span><span>SQL</span><span>AI Workflows</span><span>ETL</span><span>Git</span>
-            </div>
+            <div class="tl-tags"><span>FastAPI</span><span>Gemini 1.5 Vision</span><span>PyMuPDF</span><span>LLM</span><span>Python</span></div>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="tl-marker"></div>
-          <div class="tl-date">Jan 2025 – Jul 2025</div>
+        <div class="tl-item reveal">
+          <div class="tl-meta">
+            <span class="tl-date">Aug 2025 &ndash; Dec 2025</span>
+            <span class="tl-category">Healthcare</span>
+          </div>
           <div class="tl-card">
-            <div class="tl-header">
+            <div class="tl-card-top">
+              <div>
+                <h3 class="tl-role">Data Analyst <span class="tl-badge">Externship</span></h3>
+                <p class="tl-org">Banner Health &middot; Eller Partnership Office, University of Arizona</p>
+              </div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Owned end-to-end design of AI-first workflows for complex knowledge work by building Python and SQL pipelines to extract, transform, and load encounter and procedure data, <strong>improving data accessibility by 35%</strong>.</li>
+              <li>Designed reusable AI capabilities and evaluation pipelines by translating messy stakeholder needs into clear specs, prompts, and expected behaviors, enabling standardized reporting structures.</li>
+              <li>Defined clear success metrics for AI behavior and automated reporting workflows using Python, <strong>reducing manual reconciliation effort by 40%</strong> while improving reliability of downstream surgical volume insights.</li>
+            </ul>
+            <div class="tl-tags"><span>Python</span><span>SQL</span><span>AI Workflows</span><span>ETL</span><span>Evaluation Pipelines</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-meta">
+            <span class="tl-date">Jan 2025 &ndash; Jul 2025</span>
+            <span class="tl-category">Research</span>
+          </div>
+          <div class="tl-card">
+            <div class="tl-card-top">
               <div>
                 <h3 class="tl-role">Graduate Student Researcher</h3>
-                <p class="tl-company">University of Arizona — ACT Lab</p>
+                <p class="tl-org">University of Arizona &mdash; ACT Lab</p>
               </div>
-              <div class="tl-badge">Research</div>
             </div>
             <ul class="tl-bullets">
-              <li>Designed multi-step agent-like ML workflows for reinforcement learning experiments with planning, tool invocation, memory management, and refinement loops using Docker and AWS Lambda.</li>
-              <li>Built LLM-adjacent data analysis pipelines in Python to debug, compare variants, and analyze real interaction logs — <strong>improving experiment turnaround time by 30%</strong>.</li>
-              <li>Implemented evaluation and monitoring strategies to detect common failure modes, maintaining accuracy and reproducibility across RL pipelines.</li>
+              <li>Designed and iterated multi-step agentic workflows for reinforcement learning experiments, including planning, tool invocation, memory usage, and refinement loops to support large-scale simulations.</li>
+              <li>Built LLM-adjacent data analysis pipelines in Python to debug, compare variants, and analyze real interaction logs from high-frequency simulations, <strong>improving experiment turnaround time by 30%</strong>.</li>
+              <li>Implemented model output evaluations and monitoring strategies to detect common failure modes, maintaining accuracy and reproducibility across reinforcement learning pipelines.</li>
             </ul>
-            <div class="tl-tags">
-              <span>Reinforcement Learning</span><span>Docker</span><span>AWS Lambda</span><span>Python</span><span>LLM</span>
-            </div>
+            <div class="tl-tags"><span>Reinforcement Learning</span><span>Agentic Workflows</span><span>LLM</span><span>Python</span><span>Docker</span></div>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="tl-marker"></div>
-          <div class="tl-date">Nov 2023 – Jul 2024</div>
+        <div class="tl-item reveal">
+          <div class="tl-meta">
+            <span class="tl-date">Nov 2023 &ndash; Jul 2024</span>
+            <span class="tl-category">FinTech</span>
+          </div>
           <div class="tl-card">
-            <div class="tl-header">
+            <div class="tl-card-top">
               <div>
                 <h3 class="tl-role">Data Scientist</h3>
-                <p class="tl-company">Cognizant</p>
+                <p class="tl-org">Cognizant &middot; Jul 2022 &ndash; Jul 2024</p>
               </div>
-              <div class="tl-badge">FinTech</div>
             </div>
             <ul class="tl-bullets">
-              <li>Built ML-powered Credit Risk Prediction pipelines in SQL and Python for scalable ingestion and context construction across multi-source financial datasets.</li>
-              <li>Collaborated with engineers and business stakeholders to translate ambiguous requirements into clear specs and success metrics, <strong>improving default risk detection accuracy by 18%</strong>.</li>
-              <li>Automated model inference using AWS SageMaker, <strong>reducing processing latency by 30%</strong> while maintaining strong system reliability.</li>
+              <li>Addressed high data processing overhead across multi-source financial datasets by architecting scalable SQL and Python pipelines, <strong>reducing cloud compute and data preparation costs by 25%</strong>.</li>
+              <li>Resolved costly false-positive default predictions by translating ambiguous requirements into strict engineering specs, <strong>improving detection accuracy by 18%</strong> and minimizing financial risk exposure.</li>
+              <li>Targeted excessive AWS resource consumption from inefficient model inference by automating pipelines via SageMaker and APIs, <strong>cutting latency by 30%</strong> and lowering cloud infrastructure spend by 20%.</li>
             </ul>
-            <div class="tl-tags">
-              <span>AWS SageMaker</span><span>Credit Risk</span><span>Python</span><span>SQL</span><span>ML</span>
-            </div>
+            <div class="tl-tags"><span>AWS SageMaker</span><span>Credit Risk</span><span>Python</span><span>SQL</span><span>APIs</span></div>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="tl-marker"></div>
-          <div class="tl-date">Jul 2022 – Oct 2023</div>
+        <div class="tl-item reveal">
+          <div class="tl-meta">
+            <span class="tl-date">Jul 2022 &ndash; Oct 2023</span>
+            <span class="tl-category">Marketing</span>
+          </div>
           <div class="tl-card">
-            <div class="tl-header">
+            <div class="tl-card-top">
               <div>
                 <h3 class="tl-role">Jr. Data Scientist</h3>
-                <p class="tl-company">Cognizant</p>
+                <p class="tl-org">Cognizant</p>
               </div>
-              <div class="tl-badge">Marketing</div>
             </div>
             <ul class="tl-bullets">
-              <li>Designed agent-like analytical workflows for revenue forecasting using digital marketing data and AWS SageMaker, reducing forecast preparation time and <strong>improving cross-team alignment</strong>.</li>
-              <li>Used Python dashboards and raw interaction logs to debug forecasting outputs and <strong>improve operational efficiency by 35%</strong>.</li>
-              <li>Implemented data quality checks and evaluation pipelines to support reliable A/B testing in fast-moving, high-ambiguity environments.</li>
+              <li>Tackled high labor costs of manual revenue forecasting across business units by designing agent-like analytical workflows with tool-calling logic, <strong>reducing operational forecasting costs by 40%</strong>.</li>
+              <li>Mitigated expensive administrative bottlenecks in tracking system metrics by developing automated Python dashboards, <strong>improving operational efficiency by 35%</strong> and heavily reducing reporting overhead.</li>
+              <li>Prevented wasted operational spend on faulty A/B tests by implementing rigorous data quality checks and evaluation pipelines, stopping costly deployment of underperforming variants.</li>
             </ul>
-            <div class="tl-tags">
-              <span>Forecasting</span><span>AWS SageMaker</span><span>A/B Testing</span><span>Dashboards</span>
-            </div>
+            <div class="tl-tags"><span>Forecasting</span><span>AWS SageMaker</span><span>A/B Testing</span><span>Python Dashboards</span></div>
           </div>
         </div>
 
@@ -267,62 +265,62 @@
     </div>
   </section>
 
-  <!-- ══════════════ SKILLS ══════════════ -->
+  <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-      <div class="section-label reveal"><span class="label-num">03</span> Skills</div>
-      <h2 class="section-heading reveal">My <em>toolkit.</em></h2>
+      <div class="section-header reveal">
+        <span class="section-num">03</span>
+        <span class="section-rule"></span>
+        <h2 class="section-title">Skills</h2>
+      </div>
       <div class="skills-grid">
 
         <div class="skill-card reveal">
-          <div class="skill-icon">🤖</div>
+          <div class="skill-kicker">Discipline I</div>
           <h3>AI &amp; LLM Systems</h3>
           <ul>
-            <li>LLM-based Systems &amp; RAG</li>
+            <li>Large Language Models (LLMs) &amp; RAG</li>
             <li>Vector Search &amp; Embeddings</li>
-            <li>Chunking &amp; Retrieval Strategies</li>
             <li>Prompt Engineering &amp; Tool Calling</li>
-            <li>Agent-like Workflows</li>
-            <li>Memory Management &amp; Refinement Loops</li>
-            <li>AI Evaluation &amp; Monitoring</li>
+            <li>Agentic Workflows &amp; Memory Management</li>
+            <li>Retrieval &amp; Context Construction</li>
+            <li>Model Evaluation &amp; Monitoring</li>
           </ul>
         </div>
 
         <div class="skill-card reveal">
-          <div class="skill-icon">🐍</div>
-          <h3>Programming &amp; Data</h3>
+          <div class="skill-kicker">Discipline II</div>
+          <h3>Languages &amp; Libraries</h3>
           <ul>
-            <li>Python · SQL · Pandas · NumPy</li>
-            <li>Scikit-Learn · LightGBM · XGBoost</li>
-            <li>Machine Learning &amp; Statistics</li>
-            <li>Data Pipelines &amp; ETL</li>
-            <li>Dashboards &amp; Reporting</li>
-            <li>A/B Testing &amp; Experimentation</li>
-            <li>Digital Marketing Data</li>
+            <li>Python &middot; SQL &middot; C &middot; Java &middot; C++</li>
+            <li>Pandas &middot; NumPy &middot; Scikit-Learn</li>
+            <li>LightGBM &middot; XGBoost &middot; TensorFlow &middot; PyTorch</li>
+            <li>FastAPI &middot; REST APIs</li>
+            <li>Data Pipelines, ETL &amp; A/B Testing</li>
           </ul>
         </div>
 
         <div class="skill-card reveal">
-          <div class="skill-icon">☁️</div>
-          <h3>Cloud &amp; Platforms</h3>
+          <div class="skill-kicker">Discipline III</div>
+          <h3>Cloud &amp; DevOps</h3>
           <ul>
-            <li>AWS SageMaker</li>
-            <li>AWS Lambda &amp; Amazon RDS</li>
-            <li>Docker &amp; Containerization</li>
-            <li>REST APIs &amp; Microservices</li>
-            <li>Git &amp; Version Control</li>
+            <li>AWS SageMaker &middot; Lambda &middot; RDS</li>
+            <li>Docker &amp; Kubernetes</li>
+            <li>Terraform &amp; Infrastructure as Code</li>
+            <li>CI/CD &amp; GitHub Actions</li>
+            <li>PostgreSQL &amp; Version Control</li>
           </ul>
         </div>
 
         <div class="skill-card reveal">
-          <div class="skill-icon">🤝</div>
+          <div class="skill-kicker">Discipline IV</div>
           <h3>Product &amp; Collaboration</h3>
           <ul>
             <li>Stakeholder Requirement Translation</li>
             <li>Clear Specs &amp; Success Metrics</li>
+            <li>AI-first Workflow Design</li>
             <li>Cross-functional Engineering Collab</li>
             <li>Fast Iteration &amp; Edge Case Handling</li>
-            <li>AI-first Workflow Design</li>
           </ul>
         </div>
 
@@ -330,55 +328,52 @@
     </div>
   </section>
 
-  <!-- ══════════════ PROJECTS ══════════════ -->
-  <section id="projects">
+  <!-- PROJECTS -->
+  <section id="projects" class="section-tinted">
     <div class="container">
-      <div class="section-label reveal"><span class="label-num">04</span> Projects</div>
-      <h2 class="section-heading reveal">Things I've <em>built.</em></h2>
-      <div class="projects-grid">
+      <div class="section-header reveal">
+        <span class="section-num">04</span>
+        <span class="section-rule"></span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+      <div class="projects-list">
 
-        <div class="project-card reveal">
-          <div class="project-num">01</div>
-          <div class="project-content">
-            <h3>Fare Estimation for Manhattan Taxis</h3>
+        <div class="project-item reveal">
+          <div class="project-num">I.</div>
+          <div class="project-body">
+            <h3>Fare Estimation for Manhattan Yellow and Green Taxis</h3>
             <p>Scalable data pipelines in PostgreSQL and Python to extract, transform, and load 3 years of NYC TLC data, enabling reliable fare prediction analytics for Yellow and Green taxis.</p>
-            <ul class="project-highlights">
+            <ul class="project-points">
               <li>Cloud-native FastAPI deployment improving dataset accessibility</li>
               <li>Automated data processing workflows for large complex datasets</li>
             </ul>
-            <div class="project-tags">
-              <span>PostgreSQL</span><span>Python</span><span>FastAPI</span><span>ETL</span>
-            </div>
+            <div class="project-tags"><span>PostgreSQL</span><span>Python</span><span>FastAPI</span><span>ETL</span></div>
           </div>
         </div>
 
-        <div class="project-card reveal">
-          <div class="project-num">02</div>
-          <div class="project-content">
+        <div class="project-item reveal">
+          <div class="project-num">II.</div>
+          <div class="project-body">
             <h3>EPL Weather &amp; Match Outcome Analysis</h3>
-            <p>Interactive dashboards integrating English Premier League weather, odds, and match data for analysts and stakeholders — increasing data clarity by 40%.</p>
-            <ul class="project-highlights">
+            <p>Interactive dashboards integrating English Premier League weather, odds, and match data for analysts and stakeholders &mdash; increasing data clarity by 40%.</p>
+            <ul class="project-points">
               <li>Interactive visualizations for complex multi-source datasets</li>
-              <li>Automated reporting with consistent metric definitions</li>
+              <li>Automated reporting with consistent metric definitions across views</li>
             </ul>
-            <div class="project-tags">
-              <span>Python</span><span>Dashboards</span><span>Data Viz</span><span>Analytics</span>
-            </div>
+            <div class="project-tags"><span>Python</span><span>Dashboards</span><span>Data Viz</span><span>Analytics</span></div>
           </div>
         </div>
 
-        <div class="project-card reveal">
-          <div class="project-num">03</div>
-          <div class="project-content">
+        <div class="project-item reveal">
+          <div class="project-num">III.</div>
+          <div class="project-body">
             <h3>Predictive Modeling for Financial Markets</h3>
             <p>Structured data pipelines in Python to process historical market data for regression-based forecasting models with validation checks and performance monitoring.</p>
-            <ul class="project-highlights">
+            <ul class="project-points">
               <li>High data accuracy and reproducibility across models</li>
               <li>Performance metric monitoring and validation pipelines</li>
             </ul>
-            <div class="project-tags">
-              <span>Python</span><span>Regression</span><span>Forecasting</span><span>ML</span>
-            </div>
+            <div class="project-tags"><span>Python</span><span>Regression</span><span>Forecasting</span><span>ML</span></div>
           </div>
         </div>
 
@@ -386,114 +381,116 @@
     </div>
   </section>
 
-  <!-- ══════════════ PUBLICATIONS ══════════════ -->
+  <!-- PUBLICATIONS -->
   <section id="publications">
     <div class="container">
-      <div class="section-label reveal"><span class="label-num">05</span> Publications</div>
-      <h2 class="section-heading reveal">Research &amp; <em>Writing.</em></h2>
+      <div class="section-header reveal">
+        <span class="section-num">05</span>
+        <span class="section-rule"></span>
+        <h2 class="section-title">Publications</h2>
+      </div>
 
-      <!-- Profile badges + citation metrics -->
       <div class="pub-profiles reveal">
-        <a href="https://orcid.org/0009-0007-0939-7736" target="_blank" class="pub-profile-btn orcid">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.862 3.872-3.722 0-2.016-1.284-3.722-3.863-3.722h-2.306z"/></svg>
-          ORCID Profile
-          <span class="pub-profile-id">0009-0007-0939-7736</span>
+        <a href="https://orcid.org/0009-0007-0939-7736" target="_blank" class="pub-profile-link orcid">
+          <span class="ppl-label">ORCID</span>
+          <span class="ppl-id">0009-0007-0939-7736 &rarr;</span>
         </a>
-        <a href="https://scholar.google.com/citations?user=8vROA_4AAAAJ&hl=en" target="_blank" class="pub-profile-btn scholar">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
-          Google Scholar
-          <span class="pub-profile-id">View all citations →</span>
+        <a href="https://scholar.google.com/citations?user=8vROA_4AAAAJ&hl=en" target="_blank" class="pub-profile-link scholar">
+          <span class="ppl-label">Google Scholar</span>
+          <span class="ppl-id">View all citations &rarr;</span>
         </a>
         <div class="pub-metrics">
-          <div class="metric"><span class="metric-val">15</span><span class="metric-label">Citations</span></div>
-          <div class="metric-div"></div>
-          <div class="metric"><span class="metric-val">2</span><span class="metric-label">h-index</span></div>
-          <div class="metric-div"></div>
-          <div class="metric"><span class="metric-val">5</span><span class="metric-label">Papers</span></div>
+          <div class="pm-item"><span class="pm-val">15</span><span class="pm-label">Citations</span></div>
+          <span class="pm-sep">/</span>
+          <div class="pm-item"><span class="pm-val">2</span><span class="pm-label">h-index</span></div>
+          <span class="pm-sep">/</span>
+          <div class="pm-item"><span class="pm-val">5</span><span class="pm-label">Papers</span></div>
         </div>
       </div>
 
       <div class="pub-list">
 
-        <!-- Paper 1 -->
-        <div class="pub-card reveal">
-          <div class="pub-badge">IEEE<br/><span class="pub-cite">×6</span></div>
-          <div class="pub-body">
+        <div class="pub-entry reveal">
+          <div class="pub-left">
+            <div class="pub-badge">IEEE</div>
+            <div class="pub-cited">&times;6 cited</div>
+          </div>
+          <div class="pub-right">
             <h3 class="pub-title">Automatic Medication Dispensing System using Machine Learning, Internet of Things and Cloud Computing</h3>
-            <p class="pub-authors">BN Hiremath, K Chavhan, NJ Johnson, P Monika, <strong>S Prajwal</strong>, TJ Reddy</p>
-            <p class="pub-venue">2022 International Conference on Disruptive Technologies for Multi-Disciplinary Research and Applications (CENTCON) · Dec 2022</p>
-            <p class="pub-abstract">A smart medication dispensing system combining machine learning, IoT, and cloud computing to automate drug delivery, reduce dispensing errors, and improve patient adherence in hospital and home-care settings.</p>
-            <div class="pub-links">
-              <a href="https://doi.org/10.1109/centcon56814.2022.10051452" target="_blank" class="pub-link">Read on IEEE Xplore →</a>
-              <span class="pub-tag">IoT</span>
-              <span class="pub-tag">Cloud Computing</span>
-              <span class="pub-tag">ML</span>
+            <p class="pub-authors">BN Hiremath, K Chavhan, NJ Johnson, P Monika, <em>S Prajwal</em>, TJ Reddy</p>
+            <p class="pub-venue">2022 International Conference on Disruptive Technologies for Multi-Disciplinary Research and Applications (CENTCON) &middot; Dec 2022</p>
+            <p class="pub-abstract">A smart medication dispensing system combining machine learning, IoT, and cloud computing to automate drug delivery, reduce dispensing errors, and improve patient adherence.</p>
+            <div class="pub-footer">
+              <a href="https://doi.org/10.1109/CENTCON56610.2022.10051452" target="_blank" class="pub-link">Read on IEEE Xplore &rarr;</a>
+              <span class="pub-kw">IoT</span><span class="pub-kw">Cloud</span><span class="pub-kw">ML</span>
             </div>
           </div>
         </div>
 
-        <!-- Paper 2 -->
-        <div class="pub-card reveal">
-          <div class="pub-badge">IEEE<br/><span class="pub-cite">×3</span></div>
-          <div class="pub-body">
+        <div class="pub-entry reveal">
+          <div class="pub-left">
+            <div class="pub-badge">IEEE</div>
+            <div class="pub-cited">&times;3 cited</div>
+          </div>
+          <div class="pub-right">
             <h3 class="pub-title">Social Interaction &amp; Service Robot for Hospital Wards</h3>
-            <p class="pub-authors">G Bharath, NJ Johnson, P Monika, <strong>S Prajwal</strong>, S Aishwarya</p>
-            <p class="pub-venue">2022 IEEE International Conference on Distributed Computing and Electrical Circuits and Electronics (ICDCECE) · Apr 2022</p>
-            <p class="pub-abstract">Design and implementation of a service robot capable of social interaction in hospital environments, aimed at reducing human contact during high-risk scenarios and improving patient monitoring in hospital wards.</p>
-            <div class="pub-links">
-              <a href="https://doi.org/10.1109/icdcece53908.2022.9792798" target="_blank" class="pub-link">Read on IEEE Xplore →</a>
-              <span class="pub-tag">Robotics</span>
-              <span class="pub-tag">Healthcare AI</span>
+            <p class="pub-authors">G Bharath, NJ Johnson, P Monika, <em>S Prajwal</em>, S Aishwarya</p>
+            <p class="pub-venue">2022 IEEE International Conference on Distributed Computing and Electrical Circuits and Electronics (ICDCECE) &middot; Apr 2022</p>
+            <p class="pub-abstract">Design and implementation of a service robot capable of social interaction in hospital environments, reducing human contact during high-risk scenarios and improving patient monitoring.</p>
+            <div class="pub-footer">
+              <a href="https://doi.org/10.1109/ICDCECE53908.2022.9792798" target="_blank" class="pub-link">Read on IEEE Xplore &rarr;</a>
+              <span class="pub-kw">Robotics</span><span class="pub-kw">Healthcare AI</span>
             </div>
           </div>
         </div>
 
-        <!-- Paper 3 -->
-        <div class="pub-card reveal">
-          <div class="pub-badge">IEEE<br/><span class="pub-cite">×2</span></div>
-          <div class="pub-body">
+        <div class="pub-entry reveal">
+          <div class="pub-left">
+            <div class="pub-badge">IEEE</div>
+            <div class="pub-cited">&times;2 cited</div>
+          </div>
+          <div class="pub-right">
             <h3 class="pub-title">Analysis of Technologies used in Automatic Medicine Dispensing Systems</h3>
-            <p class="pub-authors">K Chavhan, NJ Johnson, P Monika, <strong>S Prajwal</strong>, TJ Reddy</p>
-            <p class="pub-venue">2022 IEEE International Conference on Distributed Computing and Electrical Circuits and Electronics (ICDCECE) · Apr 2022</p>
-            <p class="pub-abstract">A comprehensive comparative analysis of technologies employed in automated medicine dispensing systems, evaluating accuracy, reliability, and scalability across different hardware and software approaches.</p>
-            <div class="pub-links">
-              <a href="https://doi.org/10.1109/icdcece53908.2022.9792925" target="_blank" class="pub-link">Read on IEEE Xplore →</a>
-              <span class="pub-tag">Medical Systems</span>
-              <span class="pub-tag">Automation</span>
+            <p class="pub-authors">K Chavhan, NJ Johnson, P Monika, <em>S Prajwal</em>, TJ Reddy</p>
+            <p class="pub-venue">2022 IEEE International Conference on Distributed Computing and Electrical Circuits and Electronics (ICDCECE) &middot; Apr 2022</p>
+            <p class="pub-abstract">A comprehensive comparative analysis of technologies employed in automated medicine dispensing systems, evaluating accuracy, reliability, and scalability across approaches.</p>
+            <div class="pub-footer">
+              <a href="https://doi.org/10.1109/ICDCECE53908.2022.9792921" target="_blank" class="pub-link">Read on IEEE Xplore &rarr;</a>
+              <span class="pub-kw">Medical Systems</span><span class="pub-kw">Automation</span>
             </div>
           </div>
         </div>
 
-        <!-- Paper 4 -->
-        <div class="pub-card reveal">
-          <div class="pub-badge">IEEE<br/><span class="pub-cite">×2</span></div>
-          <div class="pub-body">
+        <div class="pub-entry reveal">
+          <div class="pub-left">
+            <div class="pub-badge">IEEE</div>
+            <div class="pub-cited">&times;2 cited</div>
+          </div>
+          <div class="pub-right">
             <h3 class="pub-title">Automatic Exam Answer Checker using Optical Character Recognition and Sentence Embedding</h3>
-            <p class="pub-authors">NS Yerramilli, NJ Johnson, P Monika, <strong>S Prajwal</strong></p>
-            <p class="pub-venue">2021 International Conference on Disruptive Technologies for Multi-Disciplinary Research and Applications (CENTCON) · Nov 2021</p>
-            <p class="pub-abstract">An automated grading system leveraging OCR to digitize handwritten exam responses and sentence embeddings to semantically compare answers against model solutions, enabling scalable and objective evaluation.</p>
-            <div class="pub-links">
-              <a href="https://doi.org/10.1109/centcon52026.2021.9688088" target="_blank" class="pub-link">Read on IEEE Xplore →</a>
-              <span class="pub-tag">NLP</span>
-              <span class="pub-tag">OCR</span>
-              <span class="pub-tag">Deep Learning</span>
+            <p class="pub-authors">NS Yerramilli, NJ Johnson, P Monika, <em>S Prajwal</em></p>
+            <p class="pub-venue">2021 International Conference on Disruptive Technologies for Multi-Disciplinary Research and Applications (CENTCON) &middot; Nov 2021</p>
+            <p class="pub-abstract">An automated grading system leveraging OCR to digitize handwritten exam responses and sentence embeddings to semantically compare answers against model solutions.</p>
+            <div class="pub-footer">
+              <a href="https://doi.org/10.1109/CENTCON52345.2021.9688008" target="_blank" class="pub-link">Read on IEEE Xplore &rarr;</a>
+              <span class="pub-kw">NLP</span><span class="pub-kw">OCR</span><span class="pub-kw">Deep Learning</span>
             </div>
           </div>
         </div>
 
-        <!-- Paper 5 -->
-        <div class="pub-card reveal">
-          <div class="pub-badge">IEEE<br/><span class="pub-cite">×2</span></div>
-          <div class="pub-body">
+        <div class="pub-entry reveal">
+          <div class="pub-left">
+            <div class="pub-badge">IEEE</div>
+            <div class="pub-cited">&times;2 cited</div>
+          </div>
+          <div class="pub-right">
             <h3 class="pub-title">Navigation Systems Using A*</h3>
-            <p class="pub-authors">NS Yerramilli, NJ Johnson, OSY Reddy, <strong>S Prajwal</strong></p>
-            <p class="pub-venue">2021 International Conference on Recent Trends on Electronics, Information, Communication &amp; Technology (RTEICT) · Aug 2021</p>
-            <p class="pub-abstract">An implementation and evaluation of the A* pathfinding algorithm for intelligent navigation systems, exploring heuristic optimizations and real-world applicability in dynamic environments.</p>
-            <div class="pub-links">
-              <a href="https://doi.org/10.1109/rteict52294.2021.9573601" target="_blank" class="pub-link">Read on IEEE Xplore →</a>
-              <span class="pub-tag">Algorithms</span>
-              <span class="pub-tag">Navigation</span>
-              <span class="pub-tag">AI</span>
+            <p class="pub-authors">NS Yerramilli, NJ Johnson, OSY Reddy, <em>S Prajwal</em></p>
+            <p class="pub-venue">2021 International Conference on Recent Trends on Electronics, Information, Communication &amp; Technology (RTEICT) &middot; Aug 2021</p>
+            <p class="pub-abstract">Implementation and evaluation of the A* pathfinding algorithm for intelligent navigation systems, exploring heuristic optimizations and real-world applicability in dynamic environments.</p>
+            <div class="pub-footer">
+              <a href="https://doi.org/10.1109/RTEICT52294.2021.9573801" target="_blank" class="pub-link">Read on IEEE Xplore &rarr;</a>
+              <span class="pub-kw">Algorithms</span><span class="pub-kw">Navigation</span><span class="pub-kw">AI</span>
             </div>
           </div>
         </div>
@@ -502,62 +499,57 @@
     </div>
   </section>
 
-  <!-- ══════════════ EDUCATION ══════════════ -->
-  <section id="education">
+  <!-- EDUCATION -->
+  <section id="education" class="section-tinted">
     <div class="container">
-      <div class="section-label reveal"><span class="label-num">06</span> Education</div>
-      <h2 class="section-heading reveal">Academic <em>journey.</em></h2>
+      <div class="section-header reveal">
+        <span class="section-num">06</span>
+        <span class="section-rule"></span>
+        <h2 class="section-title">Education</h2>
+      </div>
       <div class="edu-grid">
 
         <div class="edu-card reveal">
-          <div class="edu-accent"></div>
-          <div class="edu-icon">🎓</div>
-          <div class="edu-body">
-            <span class="edu-period">Aug 2024 – May 2026</span>
-            <h3>Master of Science</h3>
-            <p class="edu-major">Data Science</p>
-            <p class="edu-school">University of Arizona</p>
-            <p class="edu-location">Tucson, Arizona</p>
-          </div>
-          <div class="edu-status current">In Progress</div>
+          <div class="edu-top-rule"></div>
+          <span class="edu-period">Aug 2024 &ndash; May 2026</span>
+          <h3>Master of Science</h3>
+          <p class="edu-major">Data Science</p>
+          <p class="edu-school">University of Arizona</p>
+          <p class="edu-location">Tucson, Arizona &middot; GPA 3.9</p>
+          <span class="edu-status current">In Progress</span>
         </div>
 
         <div class="edu-card reveal">
-          <div class="edu-accent"></div>
-          <div class="edu-icon">🏛️</div>
-          <div class="edu-body">
-            <span class="edu-period">Aug 2018 – Jul 2022</span>
-            <h3>Bachelor of Engineering</h3>
-            <p class="edu-major">Computer Science</p>
-            <p class="edu-school">Dayananda Sagar University</p>
-            <p class="edu-location">Bengaluru, India</p>
-          </div>
-          <div class="edu-status done">Completed</div>
+          <div class="edu-top-rule"></div>
+          <span class="edu-period">Aug 2018 &ndash; Jul 2022</span>
+          <h3>Bachelor of Engineering</h3>
+          <p class="edu-major">Computer Science</p>
+          <p class="edu-school">Dayananda Sagar University</p>
+          <p class="edu-location">Bengaluru, India &middot; GPA 3.6</p>
+          <span class="edu-status done">Completed</span>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ══════════════ FOOTER ══════════════ -->
+  <!-- FOOTER -->
   <footer id="footer">
+    <div class="footer-rule"></div>
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-initials">PS</span>
-        <div>
-          <p class="footer-name">Prajwal Sathyanarayana</p>
-          <p class="footer-tagline">Data Scientist · ML Engineer · AI Builder</p>
-        </div>
+        <p class="footer-name">Prajwal Sathyanarayana</p>
+        <p class="footer-tagline">Data Scientist &middot; ML Engineer &middot; AI Builder</p>
       </div>
       <div class="footer-links">
-        <a href="mailto:prajwals@arizona.edu">prajwals@arizona.edu</a>
-        <a href="tel:5206096114">520-609-6114</a>
+        <a href="#" class="masked-contact" data-value="prajwals@arizona.edu" data-href="mailto:prajwals@arizona.edu" data-type="email" title="Click to reveal">p·······@arizona.edu&thinsp;&#128274;</a>
+        <a href="#" class="masked-contact" data-value="520-609-6114" data-href="tel:5206096114" data-type="tel" title="Click to reveal">520-***-****&thinsp;&#128274;</a>
         <a href="https://linkedin.com/in/prajwals21" target="_blank">LinkedIn</a>
         <a href="https://github.com/PRAJWAL2108" target="_blank">GitHub</a>
         <a href="https://orcid.org/0009-0007-0939-7736" target="_blank">ORCID</a>
         <a href="https://scholar.google.com/citations?user=8vROA_4AAAAJ&hl=en" target="_blank">Google Scholar</a>
       </div>
-      <p class="footer-copy">© 2026 Prajwal Sathyanarayana. Built with intention.</p>
+      <p class="footer-copy">&copy; 2026 Prajwal Sathyanarayana. All rights reserved.</p>
     </div>
   </footer>
 
