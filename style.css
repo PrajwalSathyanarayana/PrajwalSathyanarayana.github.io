@@ -7,8 +7,10 @@
 :root {
   /* Backgrounds */
   --white:       #ffffff;
+  --surface:     #ffffff;
   --bg:          #f8fafc;
   --bg-alt:      #f1f5f9;
+  --nav-bg:      rgba(255,255,255,0.97);
 
   /* Dark surfaces */
   --dark:        #0f172a;
@@ -51,7 +53,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  background: var(--white);
+  background: var(--surface);
   color: var(--text);
   font-family: var(--font-body);
   font-weight: 400;
@@ -77,7 +79,7 @@ ul { list-style: none; }
   height: var(--nav-h);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 2.5rem;
-  background: rgba(255,255,255,0.97);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   transition: box-shadow var(--transition);
@@ -180,7 +182,7 @@ ul { list-style: none; }
   position: fixed;
   top: var(--nav-h);
   left: 0; right: 0;
-  background: var(--white);
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
   z-index: 99;
   padding: 1.25rem 1.5rem;
@@ -484,7 +486,7 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
 .about-card {
   position: sticky;
   top: calc(var(--nav-h) + 2rem);
-  background: var(--white);
+  background: var(--surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
@@ -579,7 +581,7 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--surface);
   border: 2.5px solid var(--accent);
   transform: translateX(-50%);
   z-index: 1;
@@ -609,7 +611,7 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
   border-radius: 4px;
 }
 .tl-card {
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
@@ -648,6 +650,15 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
   font-weight: 500;
   color: var(--text-3);
 }
+.tl-org a {
+  color: inherit;
+  border-bottom: 1px solid var(--accent-border);
+  transition: color var(--transition), border-color var(--transition);
+}
+.tl-org a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
 .tl-bullets { margin-bottom: 1.25rem; }
 .tl-bullets li {
   font-size: 0.9625rem;
@@ -685,7 +696,7 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
   gap: 1.5rem;
 }
 .skill-card {
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -737,13 +748,52 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
 }
 
 /* ══════════════ PROJECTS ══════════════ */
+.projects-scroller {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 .projects-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.projects-list::-webkit-scrollbar { display: none; }
+.proj-arrow {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), border-color var(--transition), color var(--transition);
+}
+.proj-arrow:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+.proj-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
 }
 .project-item {
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -751,6 +801,8 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
   display: flex;
   flex-direction: column;
   gap: 0;
+  flex: 0 0 calc((100% - 2 * 1.5rem) / 3);
+  scroll-snap-align: start;
   transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
 }
 .project-item:hover {
@@ -817,6 +869,10 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
 }
+.project-body > .pub-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
 
 /* ══════════════ PUBLICATIONS ══════════════ */
 .pub-profiles {
@@ -833,7 +889,7 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
   flex-direction: column;
   gap: 0.25rem;
   padding: 1rem 1.5rem;
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
@@ -995,7 +1051,7 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
   gap: 1.75rem;
 }
 .edu-card {
-  background: var(--white);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -1147,7 +1203,7 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
 
 /* ══════════════ RESPONSIVE ══════════════ */
 @media (max-width: 1024px) {
-  .projects-list { grid-template-columns: 1fr; }
+  .project-item { flex-basis: calc((100% - 1.5rem) / 2); }
   .project-item { flex-direction: row; gap: 1.5rem; align-items: flex-start; }
   .project-num { min-width: 3rem; }
 }
@@ -1195,8 +1251,7 @@ section { padding: 6rem 0; position: relative; z-index: 1; }
   .aside-stat { min-width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .pub-entry { grid-template-columns: 1fr; }
   .pub-left { flex-direction: row; }
-  .projects-list { grid-template-columns: 1fr; }
-  .project-item { flex-direction: column; }
+  .project-item { flex-basis: 85%; flex-direction: column; }
   .timeline { padding-left: 0; }
   .timeline::before { display: none; }
   .tl-item::before { display: none; }
