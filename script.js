@@ -88,6 +88,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── Projects horizontal scroll arrows ── */
+  const projList = document.querySelector('.projects-list');
+  const projLeft = document.querySelector('.proj-arrow-left');
+  const projRight = document.querySelector('.proj-arrow-right');
+  if (projList && projLeft && projRight) {
+    const scrollAmount = () => projList.clientWidth;
+    projLeft.addEventListener('click', () => projList.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+    projRight.addEventListener('click', () => projList.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+    const updateArrows = () => {
+      const maxScroll = projList.scrollWidth - projList.clientWidth;
+      projLeft.disabled = projList.scrollLeft <= 0;
+      projRight.disabled = projList.scrollLeft >= maxScroll - 1;
+    };
+    projList.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+  }
+
   /* ── Subtle parallax on hero name ── */
   const heroName = document.querySelector('.hero-name');
   window.addEventListener('scroll', () => {
