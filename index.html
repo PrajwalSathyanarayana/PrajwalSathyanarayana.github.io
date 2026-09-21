@@ -356,6 +356,22 @@
         <div class="project-item reveal">
           <div class="project-num">III.</div>
           <div class="project-body">
+            <h3>Bank Agent Automation: Discovery/Replay Browser Automation for Legacy Banking Portals</h3>
+            <p>A two-mode browser automation system for legacy bank and credit union portals with no API. Discovery mode uses Claude to learn a task by driving a real browser (screenshot + labeled elements only, never raw selectors or coordinates), and Replay mode re-executes it deterministically in 2&ndash;4 seconds with no model in the loop.</p>
+            <ul class="project-points">
+              <li>Typed, versioned, Ed25519-signed JSON capability artifacts with three fallback locators per element and a checkpoint after every step, so saved tasks survive page changes</li>
+              <li>Layered safety: every action re-classified SAFE/RISKY/IRREVERSIBLE by rules at replay time, with irreversible actions (like payments) verified against the original request before execution</li>
+              <li>Secrets never touch the model, the artifact, or the logs &mdash; credentials resolved only at the keystroke and scrubbed at a single logging chokepoint</li>
+              <li>Built a realistic 2006-era teller portal (Flask + Jinja2, 17 routes) as the target, validated with ~1,200 automated tests that never call the model</li>
+            </ul>
+            <div class="project-tags"><span>Python</span><span>Claude API</span><span>Browser Automation</span><span>Flask</span></div>
+            <a href="https://github.com/PrajwalSathyanarayana/bank-agent-automation" target="_blank" class="pub-link">View on GitHub &rarr;</a>
+          </div>
+        </div>
+
+        <div class="project-item reveal">
+          <div class="project-num">IV.</div>
+          <div class="project-body">
             <h3>Fare Estimation for Manhattan Yellow and Green Taxis</h3>
             <p>Scalable data pipelines in PostgreSQL and Python to extract, transform, and load 3 years of NYC TLC data, enabling reliable fare prediction analytics for Yellow and Green taxis.</p>
             <ul class="project-points">
@@ -368,7 +384,7 @@
         </div>
 
         <div class="project-item reveal">
-          <div class="project-num">IV.</div>
+          <div class="project-num">V.</div>
           <div class="project-body">
             <h3>EPL Weather &amp; Match Outcome Analysis</h3>
             <p>Interactive dashboards integrating English Premier League weather, odds, and match data for analysts and stakeholders &mdash; increasing data clarity by 40%.</p>
@@ -382,7 +398,7 @@
         </div>
 
         <div class="project-item reveal">
-          <div class="project-num">V.</div>
+          <div class="project-num">VI.</div>
           <div class="project-body">
             <h3>Predictive Modeling for Financial Markets</h3>
             <p>Structured data pipelines in Python to process historical market data for regression-based forecasting models with validation checks and performance monitoring.</p>
