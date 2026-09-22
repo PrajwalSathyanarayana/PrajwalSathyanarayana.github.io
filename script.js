@@ -117,4 +117,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── Lightbox for diagrams (plain link to the image without JS) ── */
+  let lightbox;
+  document.querySelectorAll('a[data-lightbox]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      if (!lightbox) {
+        lightbox = document.createElement('dialog');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = '<img alt=""><button type="button" class="lightbox-close" aria-label="Close">&times;</button>';
+        lightbox.addEventListener('click', ev => {
+          if (ev.target === lightbox || ev.target.classList.contains('lightbox-close')) lightbox.close();
+        });
+        document.body.appendChild(lightbox);
+      }
+      const img = lightbox.querySelector('img');
+      const thumb = link.querySelector('img');
+      img.src = link.href;
+      img.alt = thumb ? thumb.alt : '';
+      lightbox.showModal();
+    });
+  });
+
 });

@@ -18,7 +18,9 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23818cf8'%3EPS%3C/text%3E%3C/svg%3E" />
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
@@ -56,11 +58,12 @@
 
         <div class="tile tile-hero reveal">
           <span class="tile-kicker">AI Engineering &amp; Machine Learning</span>
-          <h1 class="bento-name">Prajwal Sathyanarayana</em></h1>
+          <h1 class="bento-name">Prajwal <em>Sathyanarayana</em></h1>
           <p class="bento-headline">AI Engineer building production-grade ML systems, from fine-tuned models to deployed agent pipelines.</p>
           <p class="bento-bio">M.S. Data Science, University of Arizona (GPA 3.9). 3+ years across fintech, healthcare, research and edtech. Open to full-time AI Engineer, ML Engineer and Applied Scientist roles.</p>
           <div class="bento-actions">
-            <a href="Prajwal Sathyanarayana Resume.pdf" download class="bento-btn">&#8595; Resume</a>
+            <a href="#projects" class="bento-btn">View Projects &darr;</a>
+            <a href="Prajwal Sathyanarayana Resume.pdf" download class="bento-btn is-ghost">&#8595; Resume</a>
             <a href="mailto:prajwalsathyanarayana21@gmail.com" class="bento-btn is-ghost">Email me &rarr;</a>
           </div>
           <div class="bento-links">
@@ -72,27 +75,14 @@
           </div>
         </div>
 
-        <div class="tile tile-metrics reveal">
-          <div class="metric">
-            <span class="metric-num">3<sup>+</sup></span>
-            <span class="metric-label">Years shipping ML</span>
-            <span class="metric-context">Cognizant &middot; Banner Health &middot; Axio</span>
-          </div>
-          <div class="metric">
-            <span class="metric-num">40<sup>%</sup></span>
-            <span class="metric-label">Lower forecasting cost</span>
-            <span class="metric-context">Agentic forecasting workflows at Cognizant</span>
-          </div>
-          <div class="metric">
-            <span class="metric-num">18<sup>%</sup></span>
-            <span class="metric-label">Better credit-risk detection</span>
-            <span class="metric-context">Default-prediction models at Cognizant</span>
-          </div>
-          <div class="metric">
-            <span class="metric-num">18</span>
-            <span class="metric-label">Citations</span>
-            <span class="metric-context">Across 5 IEEE papers</span>
-          </div>
+        <div class="tile tile-path reveal">
+          <span class="tile-kicker">Path &middot; 3+ years</span>
+          <ol class="path">
+            <li class="is-now"><span class="path-when">Now</span><b>LLM &amp; agent systems</b><span>Bank Agent Automation, SmolLM2 fine-tuning</span></li>
+            <li><span class="path-when">2026</span><b>Multimodal document AI</b><span>MarginMind, a Gemini Vision grading pipeline at Axio Education</span></li>
+            <li><span class="path-when">2025</span><b>Research &amp; data systems</b><span>Agentic RL workflows at the UA ACT Lab; healthcare data pipelines at Banner Health</span></li>
+            <li><span class="path-when">2022&ndash;24</span><b>Data science &amp; production ML</b><span>Credit-risk models, forecasting and SageMaker MLOps at Cognizant</span></li>
+          </ol>
         </div>
 
         <div class="tile tile-feature reveal">
@@ -112,13 +102,13 @@
         </div>
 
         <div class="tile tile-feature reveal">
-          <span class="tile-kicker">Featured &middot; ML Engineering</span>
+          <span class="tile-kicker">Featured &middot; Production ML</span>
           <h2>Manhattan Taxi <em>Fare Estimation</em></h2>
           <p>Upfront fares for NYC yellow and green taxis: LightGBM served by a load-balanced FastAPI service on DigitalOcean.</p>
           <div class="tile-stats">
             <div><b>92.2%</b><span>R&sup2; on dollar fare</span></div>
             <div><b>$5.71</b><span>RMSE per trip</span></div>
-            <div><b>~$46</b><span>Infra per month</span></div>
+            <div class="has-tip" tabindex="0" data-tip="Load balancer $12 + 2 droplets $14 + managed Postgres $15 + Spaces $5; VPC and Mapbox free tier $0 = $46/month"><b>~$46</b><span>Infra per month</span><span class="sr-only"> (Load balancer $12 + 2 droplets $14 + managed Postgres $15 + Spaces $5; VPC and Mapbox free tier $0 = $46/month)</span></div>
           </div>
           <div class="tile-links">
             <a href="#projects" data-slide="1" class="tile-cta">Details &darr;</a>
@@ -126,23 +116,39 @@
           </div>
         </div>
 
+        <div class="tile tile-building reveal">
+          <span class="tile-kicker">Now Building</span>
+          <div class="building-grid">
+            <div class="building-item">
+              <h3>SmolLM2-360M Medical Q&amp;A Fine-Tuning</h3>
+              <p>Can a fine-tuned 360M model recover a 7B model's medical Q&amp;A performance at ~20&times; lower inference cost? Full SFT on ~187K pairs, benchmarked on ROUGE.</p>
+              <a href="https://github.com/PrajwalSathyanarayana/smollm2-medical-sft" target="_blank">GitHub &rarr;</a>
+            </div>
+            <div class="building-item">
+              <h3>AI Data Science Copilot</h3>
+              <p>CSV in, analyst-style report out. Python computes every statistic and the LLM only interprets; a chatbot routes questions to text-to-SQL or RAG.</p>
+              <a href="https://github.com/PrajwalSathyanarayana/Data-Science-CoPilot" target="_blank">GitHub &rarr;</a>
+            </div>
+          </div>
+        </div>
+
         <div class="tile tile-stack reveal">
           <span class="tile-kicker">Tech Stack</span>
           <div class="stack-row">
             <h3>AI &amp; LLM Systems</h3>
-            <div class="stack-tags"><span class="tag-item" title="full SFT, HuggingFace transformers/trl/peft/accelerate">LLM Fine-Tuning</span><span class="tag-item" title="text-to-SQL + embedding RAG hybrid">RAG &amp; Query Routing</span><span class="tag-item" title="multi-mode orchestration, discovery/replay architectures">Agentic Workflows</span><span class="tag-item">Prompt Engineering for Vision Agents</span><span class="tag-item" title="Gemini Vision, document classification/routing">Multimodal AI</span><span class="tag-item" title="ROUGE, R&sup2;, RMSE, statistical significance testing">Model Evaluation</span></div>
+            <div class="stack-tags"><span class="tag-item has-tip" tabindex="0" data-tip="full SFT, HuggingFace transformers/trl/peft/accelerate">LLM Fine-Tuning<span class="sr-only"> (full SFT, HuggingFace transformers/trl/peft/accelerate)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="text-to-SQL + embedding RAG hybrid, query routing">RAG<span class="sr-only"> (text-to-SQL + embedding RAG hybrid, query routing)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="multi-mode orchestration, discovery/replay architectures">Agentic Workflows<span class="sr-only"> (multi-mode orchestration, discovery/replay architectures)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="for vision-driven agents">Prompt Engineering<span class="sr-only"> (for vision-driven agents)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="Gemini Vision, document classification/routing">Multimodal AI<span class="sr-only"> (Gemini Vision, document classification/routing)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="ROUGE, R&sup2;, RMSE, statistical significance testing">Model Evaluation<span class="sr-only"> (ROUGE, R&sup2;, RMSE, statistical significance testing)</span></span></div>
           </div>
           <div class="stack-row">
             <h3>Languages &amp; Libraries</h3>
-            <div class="stack-tags"><span class="tag-item">Python</span><span class="tag-item">SQL</span><span class="tag-item">Pandas</span><span class="tag-item">NumPy</span><span class="tag-item">Scikit-Learn</span><span class="tag-item">LightGBM</span><span class="tag-item">PyTorch</span><span class="tag-item">HuggingFace Datasets</span><span class="tag-item">FastAPI</span><span class="tag-item">REST APIs</span><span class="tag-item" title="schema normalization, feature engineering">Data Pipelines &amp; ETL</span></div>
+            <div class="stack-tags"><span class="tag-item">Python</span><span class="tag-item">SQL</span><span class="tag-item">PyTorch</span><span class="tag-item has-tip" tabindex="0" data-tip="transformers, datasets">Hugging Face<span class="sr-only"> (transformers, datasets)</span></span><span class="tag-item">Scikit-Learn</span><span class="tag-item">LightGBM</span><span class="tag-item">XGBoost</span><span class="tag-item">Pandas</span><span class="tag-item">NumPy</span><span class="tag-item">FastAPI</span><span class="tag-item">Flask</span><span class="tag-item has-tip" tabindex="0" data-tip="schema normalization, feature engineering">ETL<span class="sr-only"> (schema normalization, feature engineering)</span></span></div>
           </div>
           <div class="stack-row">
             <h3>Cloud &amp; DevOps</h3>
-            <div class="stack-tags"><span class="tag-item">AWS (SageMaker, Lambda, RDS)</span><span class="tag-item" title="containerized model serving">Docker</span><span class="tag-item" title="feature stores, prediction caching">PostgreSQL</span><span class="tag-item">DuckDB</span><span class="tag-item" title="DigitalOcean, high-availability serving">Load-Balanced Deployment</span><span class="tag-item" title="artifact storage, semantic versioning">Model Registry &amp; Versioning</span><span class="tag-item" title="deterministic, model-free test suites">CI-Style Testing for ML</span><span class="tag-item" title="execution tracing, audit logging">Structured Observability</span></div>
+            <div class="stack-tags"><span class="tag-item">AWS (SageMaker, Lambda, RDS)</span><span class="tag-item has-tip" tabindex="0" data-tip="containerized model serving">Docker<span class="sr-only"> (containerized model serving)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="feature stores, prediction caching">PostgreSQL<span class="sr-only"> (feature stores, prediction caching)</span></span><span class="tag-item">DuckDB</span><span class="tag-item has-tip" tabindex="0" data-tip="DigitalOcean, high-availability serving">Load Balancing<span class="sr-only"> (DigitalOcean, high-availability serving)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="artifact storage, semantic versioning">Model Registry<span class="sr-only"> (artifact storage, semantic versioning)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="deterministic, model-free test suites">ML Testing<span class="sr-only"> (deterministic, model-free test suites)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="execution tracing, audit logging">Observability<span class="sr-only"> (execution tracing, audit logging)</span></span></div>
           </div>
           <div class="stack-row">
             <h3>Product &amp; Collaboration</h3>
-            <div class="stack-tags"><span class="tag-item" title="rule-based guardrails independent of the model">Safety-Layered System Design</span><span class="tag-item" title="documented trade-offs">Defensible Engineering Decisions</span><span class="tag-item" title="bank operations, healthcare analytics, education workflows">Cross-functional Translation</span><span class="tag-item">Fast Iteration &amp; Edge Case Handling</span></div>
+            <div class="stack-tags"><span class="tag-item has-tip" tabindex="0" data-tip="rule-based safety layers independent of the model">Guardrail Design<span class="sr-only"> (rule-based safety layers independent of the model)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="documented, defensible decisions">Engineering Trade-offs<span class="sr-only"> (documented, defensible decisions)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="bank operations, healthcare analytics, education workflows">Cross-functional Work<span class="sr-only"> (bank operations, healthcare analytics, education workflows)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="fast iteration on failure cases">Edge-Case Handling<span class="sr-only"> (fast iteration on failure cases)</span></span></div>
           </div>
         </div>
 
@@ -166,22 +172,6 @@
           <div class="edu-item">
             <h3>B.E. Computer Science</h3>
             <p>Dayananda Sagar University &middot; GPA 3.6</p>
-          </div>
-        </div>
-
-        <div class="tile tile-building reveal">
-          <span class="tile-kicker">Now Building</span>
-          <div class="building-grid">
-            <div class="building-item">
-              <h3>SmolLM2-360M Medical Q&amp;A Fine-Tuning</h3>
-              <p>Can a fine-tuned 360M model recover a 7B model's medical Q&amp;A performance at ~20&times; lower inference cost? Full SFT on ~187K pairs, benchmarked on ROUGE.</p>
-              <a href="https://github.com/PrajwalSathyanarayana/smollm2-medical-sft" target="_blank">GitHub &rarr;</a>
-            </div>
-            <div class="building-item">
-              <h3>AI Data Science Copilot</h3>
-              <p>CSV in, analyst-style report out. Python computes every statistic and the LLM only interprets; a chatbot routes questions to text-to-SQL or RAG.</p>
-              <a href="https://github.com/PrajwalSathyanarayana/Data-Science-CoPilot" target="_blank">GitHub &rarr;</a>
-            </div>
           </div>
         </div>
 
@@ -212,6 +202,12 @@
             <div class="feature-stat"><span class="feature-stat-val">$0.19&ndash;0.33</span><span class="feature-stat-label">To learn a task</span></div>
             <div class="feature-stat"><span class="feature-stat-val">1,222</span><span class="feature-stat-label">Tests, none call the model</span></div>
           </div>
+          <a href="img/bank-agent.jpg" target="_blank" class="feature-shot" data-lightbox aria-label="Enlarge the Bank Agent architecture diagram">
+            <picture>
+              <source srcset="img/bank-agent.webp" type="image/webp">
+              <img src="img/bank-agent.jpg" width="1233" height="848" loading="lazy" alt="Bank Agent architecture: a request goes to Intake, then a Router checks for a saved, trusted artifact. If none exists, Discovery observes, decides, checks, records and acts, then scans, signs, versions and saves an artifact. If one exists, Replay loads it, verifies the signature, finds each element, passes the safety gate, acts and checks. Both engines share a safety gate, browser surface, human handoff and evidence logger.">
+            </picture>
+          </a>
         </div>
         <div class="feature-body">
           <dl class="feature-story">
@@ -240,21 +236,30 @@
 
       <article class="project-feature">
         <div class="feature-head">
-          <span class="skill-kicker">02 / 04 &middot; ML Engineering</span>
+          <span class="skill-kicker">02 / 04 &middot; Production ML</span>
           <h3>Manhattan Taxi <em>Fare Estimation</em></h3>
           <p class="feature-sub">A cloud-native estimator that gives NYC yellow and green taxi riders an upfront fare before the ride, from pickup and dropoff zone, time and passenger count.</p>
           <div class="feature-stats">
             <div class="feature-stat"><span class="feature-stat-val">92.2%</span><span class="feature-stat-label">R&sup2; on dollar fare</span></div>
             <div class="feature-stat"><span class="feature-stat-val">$5.71</span><span class="feature-stat-label">Avg. error per trip (RMSE)</span></div>
-            <div class="feature-stat"><span class="feature-stat-val">~$46</span><span class="feature-stat-label">Infra cost per month</span></div>
+            <div class="feature-stat has-tip" tabindex="0" data-tip="Load balancer $12 + 2 droplets $14 + managed Postgres $15 + Spaces $5; VPC and Mapbox free tier $0 = $46/month"><span class="feature-stat-val">~$46</span><span class="feature-stat-label">Infra cost per month</span><span class="sr-only"> (Load balancer $12 + 2 droplets $14 + managed Postgres $15 + Spaces $5; VPC and Mapbox free tier $0 = $46/month)</span></div>
           </div>
-          <ol class="feature-flow" aria-label="System architecture">
-            <li><span>Ingest</span>TLC parquet &rarr; Postgres</li>
-            <li><span>Train</span>LightGBM + metrics</li>
-            <li><span>Registry</span>Versioned models in Spaces</li>
-            <li><span>Serve</span>FastAPI &times;2 behind a load balancer</li>
-            <li><span>Infer</span>Mapbox distance + Postgres cache</li>
-          </ol>
+          <div class="feature-shots">
+            <a href="img/fare-estimation.jpg" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the infrastructure diagram">
+              <picture>
+                <source srcset="img/fare-estimation.webp" type="image/webp">
+                <img src="img/fare-estimation.jpg" width="610" height="576" loading="lazy" alt="Infrastructure: users reach a DigitalOcean load balancer inside a VPC, which sends traffic to two droplets running the FastAPI service in Docker; one also runs the training and ingest script. Both read from a managed Postgres database for logs and training data and from DigitalOcean Spaces for model storage, behind a firewall with snapshots and backups.">
+              </picture>
+              <span class="shot-label">Infrastructure</span>
+            </a>
+            <a href="img/fare-estimation-ui.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the estimator screenshot">
+              <picture>
+                <source srcset="img/fare-estimation-ui.webp" type="image/webp">
+                <img src="img/fare-estimation-ui.png" width="350" height="635" loading="lazy" alt="The NYC Taxi Fare Estimator form with pickup zone, dropoff zone, date, time and passenger count, showing an estimated fare of $16.37.">
+              </picture>
+              <span class="shot-label">Estimator UI</span>
+            </a>
+          </div>
         </div>
         <div class="feature-body">
           <dl class="feature-story">
@@ -288,49 +293,9 @@
         </div>
       </article>
 
-
       <article class="project-feature">
         <div class="feature-head">
-          <span class="skill-kicker">03 / 04 &middot; Data Visualization</span>
-          <h3>Analyzing English Premier League <em>Match Data</em></h3>
-          <p class="feature-sub">An exploratory visualization project, built as an interactive Shiny dashboard, testing whether weather and betting odds predict EPL match outcomes.</p>
-          <div class="feature-stats">
-            <div class="feature-stat"><span class="feature-stat-val">~85%</span><span class="feature-stat-label">Winners picked by betting odds</span></div>
-            <div class="feature-stat"><span class="feature-stat-val">3</span><span class="feature-stat-label">Sources merged</span></div>
-            <div class="feature-stat"><span class="feature-stat-val">2021&ndash;23</span><span class="feature-stat-label">EPL seasons</span></div>
-          </div>
-        </div>
-        <div class="feature-body">
-          <dl class="feature-story">
-            <div class="feature-row">
-              <dt>Question</dt>
-              <dd>Do weather and betting odds predict how English Premier League matches turn out, and do referees treat home and away teams differently?</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Data</dt>
-              <dd>Match results, weather and betting odds for the 2021&ndash;2023 seasons, each with different time frames and formats. The core engineering work was <strong>normalizing dates</strong> across formats, joining weather to matches on date and location, and joining odds on date, home team and away team.</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Built</dt>
-              <dd>An interactive <strong>Shiny app</strong>: select one team to see its season trend (odds vs. date, opponent on hover, extreme-weather dates highlighted), or two teams for a head-to-head comparison. Visuals include a lollipop chart of odds vs. outcomes, a referee-decision pie chart and a stacked bar chart of results across temperature ranges.</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Result</dt>
-              <dd>Betting odds picked the winner in <strong>about 85%</strong> of matches. Upsets were more likely in extreme weather, especially rain, and draws rose at both temperature extremes, plausibly because extreme weather slows play. There was no conclusive referee bias between home and away teams, though some referees were harsher on away teams overall.</dd>
-            </div>
-          </dl>
-          <div class="feature-foot">
-            <div class="project-tags"><span>R</span><span>Shiny</span><span>Data Viz</span><span>Data Wrangling</span></div>
-            <div class="feature-links">
-              <a href="https://info-526-f24.github.io/project-01-MildCats/" target="_blank" class="feature-cta">View Project &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-feature">
-        <div class="feature-head">
-          <span class="skill-kicker">04 / 04 &middot; Forecasting</span>
+          <span class="skill-kicker">03 / 04 &middot; Classical ML</span>
           <h3>Predicting the Future: <em>Where Will Stocks, Cryptos, and Commodities Stand by 2026?</em></h3>
           <p class="feature-sub">Forecasting stock, cryptocurrency and commodity prices through 2026 with linear regression on four years of daily prices, with Apple as the worked example.</p>
           <div class="feature-stats">
@@ -367,6 +332,61 @@
         </div>
       </article>
 
+      <article class="project-feature">
+        <div class="feature-head">
+          <span class="skill-kicker">04 / 04 &middot; Data Science</span>
+          <h3>Analyzing English Premier League <em>Match Data</em></h3>
+          <p class="feature-sub">An exploratory visualization project, built as an interactive Shiny dashboard, testing whether weather and betting odds predict EPL match outcomes.</p>
+          <div class="feature-stats">
+            <div class="feature-stat"><span class="feature-stat-val">~85%</span><span class="feature-stat-label">Winners picked by betting odds</span></div>
+            <div class="feature-stat"><span class="feature-stat-val">3</span><span class="feature-stat-label">Sources merged</span></div>
+            <div class="feature-stat"><span class="feature-stat-val">2021&ndash;23</span><span class="feature-stat-label">EPL seasons</span></div>
+          </div>
+          <div class="feature-shots is-stacked">
+            <a href="img/epl-app.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the Shiny app screenshot">
+              <picture>
+                <source srcset="img/epl-app.webp" type="image/webp">
+                <img src="img/epl-app.png" width="1200" height="530" loading="lazy" alt="The Shiny app with Arsenal and temperature extremes selected: a lollipop chart of betting odds by match date, each match marked with the opponent's crest, green for wins and red for losses, with extreme-weather days shaded.">
+              </picture>
+              <span class="shot-label">Shiny app &middot; odds vs. outcomes</span>
+            </a>
+            <a href="img/epl-draws.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the draws-by-temperature chart">
+              <picture>
+                <source srcset="img/epl-draws.webp" type="image/webp">
+                <img src="img/epl-draws.png" width="1200" height="322" loading="lazy" alt="Match outcomes and draw probability by temperature: stacked home win, draw and away win shares, with the observed and smoothed draw rate rising at both cold and hot extremes.">
+              </picture>
+              <span class="shot-label">Draws vs. temperature</span>
+            </a>
+          </div>
+        </div>
+        <div class="feature-body">
+          <dl class="feature-story">
+            <div class="feature-row">
+              <dt>Question</dt>
+              <dd>Do weather and betting odds predict how English Premier League matches turn out, and do referees treat home and away teams differently?</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Data</dt>
+              <dd>Match results, weather and betting odds for the 2021&ndash;2023 seasons, each with different time frames and formats. The core engineering work was <strong>normalizing dates</strong> across formats, joining weather to matches on date and location, and joining odds on date, home team and away team.</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Built</dt>
+              <dd>An interactive <strong>Shiny app</strong>: select one team to see its season trend (odds vs. date, opponent on hover, extreme-weather dates highlighted), or two teams for a head-to-head comparison. Visuals include a lollipop chart of odds vs. outcomes, a referee-decision pie chart and a stacked bar chart of results across temperature ranges.</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Result</dt>
+              <dd>Betting odds picked the winner in <strong>about 85%</strong> of matches. Upsets were more likely in extreme weather, especially rain, and draws rose at both temperature extremes, plausibly because extreme weather slows play. There was no conclusive referee bias between home and away teams, though some referees were harsher on away teams overall.</dd>
+            </div>
+          </dl>
+          <div class="feature-foot">
+            <div class="project-tags"><span>R</span><span>Shiny</span><span>Data Viz</span><span>Data Wrangling</span></div>
+            <div class="feature-links">
+              <a href="https://info-526-f24.github.io/project-01-MildCats/" target="_blank" class="feature-cta">View Project &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
         </div>
         <button type="button" class="proj-arrow proj-arrow-right" aria-label="Next featured project">&rarr;</button>
       </div>
@@ -388,7 +408,7 @@
             <span class="xp-main">
               <span class="xp-role">AI Engineer <span class="tl-badge">Capstone</span></span>
               <span class="xp-org"><a href="https://axio.ai/" target="_blank">Axio Education</a> &middot; INFO 698</span>
-              <span class="xp-sum">Async FastAPI document-intelligence pipeline and Gemini 1.5 Vision grading with auto-routing of submissions.</span>
+              <span class="xp-sum">Built MarginMind: an async FastAPI document-intelligence pipeline and Gemini 1.5 Vision grading with auto-routing of submissions.</span>
             </span>
             <span class="xp-impact"><span class="xp-metric"><b>100%</b><small>Self-contained submissions auto-routed</small></span></span>
             <span class="xp-toggle" aria-hidden="true"></span>
@@ -479,6 +499,10 @@
         <span class="section-rule"></span>
         <h2 class="section-title">Publications</h2>
       </div>
+      <div class="pub-intro reveal">
+        <p>Five IEEE conference papers (2021&ndash;2022) on applied ML and intelligent systems, mostly in healthcare: medication dispensing and hospital service robots, plus OCR-based answer grading and A* navigation.</p>
+        <div class="pub-stats"><span><b>5</b>papers</span><span><b>18</b>citations</span><span><b>3</b>h-index</span></div>
+      </div>
 
       <div class="pub-list">
         <a class="pub-row reveal" href="https://doi.org/10.1109/CENTCON56610.2022.10051452" target="_blank">
@@ -528,6 +552,15 @@
 
   <!-- FOOTER -->
   <footer id="footer">
+    <div class="footer-cta reveal">
+      <h2>Working on LLM systems, agents or production ML?</h2>
+      <p>I&rsquo;d like to hear about it.</p>
+      <div class="footer-cta-links">
+        <a href="mailto:prajwalsathyanarayana21@gmail.com" class="bento-btn">Email me &rarr;</a>
+        <a href="https://linkedin.com/in/prajwalsathyanarayana" target="_blank" class="bento-btn is-ghost">LinkedIn</a>
+        <a href="https://github.com/PrajwalSathyanarayana" target="_blank" class="bento-btn is-ghost">GitHub</a>
+      </div>
+    </div>
     <div class="footer-rule"></div>
     <div class="footer-inner">
       <div class="footer-brand">
