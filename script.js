@@ -1,7 +1,7 @@
 /* ── Analytics (GoatCounter: no cookies, no personal data) ──
    Paste your site code, e.g. 'prajwal' for https://prajwal.goatcounter.com.
    Empty = nothing is loaded or sent. */
-const GOATCOUNTER_CODE = '';
+const GOATCOUNTER_CODE = 'prajwalsathyanarayana';
 
 if (GOATCOUNTER_CODE && !/^(localhost|127\.|file:)/.test(location.hostname || location.protocol)) {
   const gc = document.createElement('script');
