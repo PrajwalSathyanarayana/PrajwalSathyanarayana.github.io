@@ -1,4 +1,25 @@
+/* ── Analytics (GoatCounter: no cookies, no personal data) ──
+   Paste your site code, e.g. 'prajwal' for https://prajwal.goatcounter.com.
+   Empty = nothing is loaded or sent. */
+const GOATCOUNTER_CODE = '';
+
+if (GOATCOUNTER_CODE && !/^(localhost|127\.|file:)/.test(location.hostname || location.protocol)) {
+  const gc = document.createElement('script');
+  gc.async = true;
+  gc.src = 'https://gc.zgo.at/count.js';
+  gc.dataset.goatcounter = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
+  document.head.appendChild(gc);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ── Count outbound clicks as analytics events (no-op without GoatCounter) ── */
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="http"]');
+    if (!a || !window.goatcounter || !window.goatcounter.count) return;
+    const url = new URL(a.href);
+    window.goatcounter.count({ path: 'out: ' + url.hostname + url.pathname, title: a.textContent.trim().slice(0, 60), event: true });
+  });
 
   /* ── Scroll reveal ── */ 
   const revealEls = document.querySelectorAll('.reveal');

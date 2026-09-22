@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prajwalsathyanarayana.github.io/sitemap.xml
