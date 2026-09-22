@@ -1,28 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Typed hero subtitle ── */
-  const phrases = [
-    'AI Engineer',
-    'LLM Systems Builder',
-    'Agentic Workflow Designer',
-    'ML Engineer',
-    'AWS AI Engineer',
-  ];
-  let phraseIdx = 0, charIdx = 0, deleting = false;
-  const typedEl = document.querySelector('.typed-text');
-  function typeLoop() {
-    const current = phrases[phraseIdx];
-    typedEl.textContent = deleting
-      ? current.slice(0, --charIdx)
-      : current.slice(0, ++charIdx);
-    let delay = deleting ? 45 : 85;
-    if (!deleting && charIdx === current.length) { delay = 2200; deleting = true; }
-    else if (deleting && charIdx === 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; delay = 350; }
-    setTimeout(typeLoop, delay);
-  }
-  if (typedEl) typeLoop();
-
-  /* ── Scroll reveal ── */
+  /* ── Scroll reveal ── */ 
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -62,37 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ── Smooth scroll ── */
-  document.querySelectorAll('a[href^="#"]:not(.masked-contact)').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       const target = document.querySelector(anchor.getAttribute('href'));
       if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' }); }
     });
   });
 
-  /* ── Click-to-reveal masked contacts ── */
-  document.querySelectorAll('.masked-contact').forEach(el => {
-    el.addEventListener('click', function(e) {
-      e.preventDefault();
-      if (this.dataset.revealed === 'true') {
-        const type = this.dataset.type;
-        const val  = this.dataset.value;
-        if (type === 'email') window.location.href = 'mailto:' + val;
-        else if (type === 'tel') window.location.href = 'tel:' + val.replace(/-/g, '');
-        return;
-      }
-      this.dataset.revealed = 'true';
-      this.classList.add('revealed');
-      this.textContent = this.dataset.value;
-      if (this.dataset.href) this.href = this.dataset.href;
-      this.title = 'Click to open';
-    });
-  });
-
   /* ── Projects horizontal scroll arrows ── */
-  const projList = document.querySelector('.projects-list');
-  const projLeft = document.querySelector('.proj-arrow-left');
-  const projRight = document.querySelector('.proj-arrow-right');
-  if (projList && projLeft && projRight) {
+  document.querySelectorAll('.projects-scroller').forEach(scroller => {
+    const projList = scroller.querySelector('.projects-list');
+    const projLeft = scroller.querySelector('.proj-arrow-left');
+    const projRight = scroller.querySelector('.proj-arrow-right');
+    if (!projList || !projLeft || !projRight) return;
     const scrollAmount = () => projList.clientWidth;
     projLeft.addEventListener('click', () => projList.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
     projRight.addEventListener('click', () => projList.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
@@ -101,15 +61,60 @@ document.addEventListener('DOMContentLoaded', () => {
       projLeft.disabled = projList.scrollLeft <= 0;
       projRight.disabled = projList.scrollLeft >= maxScroll - 1;
     };
-    projList.addEventListener('scroll', updateArrows, { passive: true });
-    window.addEventListener('resize', updateArrows);
-    updateArrows();
-  }
+    // Featured slider: size the track to the visible slide, not the tallest one
+    const fitHeight = () => {
+      if (!scroller.classList.contains('feature-scroller')) return;
+      const i = Math.round(projList.scrollLeft / projList.clientWidth);
+      const slide = projList.children[Math.min(i, projList.children.length - 1)];
+      if (slide) projList.style.height = (slide.offsetHeight + 8) + 'px';
+    };
+    // Featured slider: every card matches the first card's height; longer ones clamp behind "…More"
+    const slides = [...projList.querySelectorAll('.project-feature')];
+    slides.slice(1).forEach(slide => {
+      const story = slide.querySelector('.feature-story');
+      if (!story) return;
+      const more = document.createElement('button');
+      more.type = 'button';
+      more.className = 'feature-more';
+      more.textContent = '…More';
+      more.addEventListener('click', () => {
+        const open = slide.classList.toggle('is-expanded');
+        more.textContent = open ? 'Less' : '…More';
+        sizeSlides();
+        if (!open) slide.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      });
+      story.after(more);
+    });
+    const sizeSlides = () => {
+      if (!slides.length) return;
+      slides.forEach(s => { s.classList.remove('is-clamped', 'has-more'); s.style.height = ''; s.style.minHeight = ''; });
+      const ref = slides[0].offsetHeight;
+      slides.slice(1).forEach(s => {
+        s.classList.toggle('has-more', s.offsetHeight > ref + 1);
+        if (s.classList.contains('is-expanded')) return;
+        s.style.minHeight = ref + 'px';
+        if (s.classList.contains('has-more')) {
+          s.classList.add('is-clamped');
+          s.style.height = ref + 'px';
+        }
+      });
+      fitHeight();
+    };
 
-  /* ── Subtle parallax on hero name ── */
-  const heroName = document.querySelector('.hero-name');
-  window.addEventListener('scroll', () => {
-    if (heroName) heroName.style.transform = `translateY(${window.scrollY * 0.12}px)`;
-  }, { passive: true });
+    projList.addEventListener('scroll', () => { updateArrows(); fitHeight(); }, { passive: true });
+    window.addEventListener('resize', () => { updateArrows(); sizeSlides(); });
+    window.addEventListener('load', sizeSlides);
+    updateArrows();
+    sizeSlides();
+  });
+
+  /* ── Bento "Details" links jump to the matching featured slide ── */
+  document.querySelectorAll('[data-slide]').forEach(link => {
+    link.addEventListener('click', () => {
+      const list = document.querySelector('.feature-list');
+      const slide = list && list.children[Number(link.dataset.slide)];
+      if (slide) list.scrollTo({ left: slide.offsetLeft - list.offsetLeft, behavior: 'smooth' });
+    });
+  });
 
 });
