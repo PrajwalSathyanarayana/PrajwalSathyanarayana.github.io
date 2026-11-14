@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const siblings = [...entry.target.parentElement.querySelectorAll('.reveal:not(.visible)')];
-        const delay = siblings.indexOf(entry.target) * 70;
+        const delay = Math.min(siblings.indexOf(entry.target), 4) * 60;
         setTimeout(() => entry.target.classList.add('visible'), Math.max(0, delay));
         revealObserver.unobserve(entry.target);
       }
@@ -49,94 +49,80 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Mobile menu ── */
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-  document.querySelectorAll('.mob-link').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-    });
-  });
+  const setMenu = open => {
+    hamburger.classList.toggle('open', open);
+    mobileMenu.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    mobileMenu.inert = !open;
+  };
+  hamburger.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+  document.querySelectorAll('.mob-link').forEach(link => link.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && mobileMenu.classList.contains('open')) { setMenu(false); hamburger.focus(); } });
 
-  /* ── Smooth scroll ── */
+  /* ── Smooth scroll (instant when the visitor prefers reduced motion) ── */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' }); }
+      const id = anchor.getAttribute('href');
+      const target = id === '#top' ? document.body : document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({ top: id === '#top' ? 0 : target.offsetTop - 70, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
     });
   });
 
-  /* ── Projects horizontal scroll arrows ── */
-  document.querySelectorAll('.projects-scroller').forEach(scroller => {
-    const projList = scroller.querySelector('.projects-list');
-    const projLeft = scroller.querySelector('.proj-arrow-left');
-    const projRight = scroller.querySelector('.proj-arrow-right');
-    if (!projList || !projLeft || !projRight) return;
-    const scrollAmount = () => projList.clientWidth;
-    projLeft.addEventListener('click', () => projList.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
-    projRight.addEventListener('click', () => projList.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
-    const updateArrows = () => {
-      const maxScroll = projList.scrollWidth - projList.clientWidth;
-      projLeft.disabled = projList.scrollLeft <= 0;
-      projRight.disabled = projList.scrollLeft >= maxScroll - 1;
-    };
-    // Featured slider: size the track to the visible slide, not the tallest one
-    const fitHeight = () => {
-      if (!scroller.classList.contains('feature-scroller')) return;
-      const i = Math.round(projList.scrollLeft / projList.clientWidth);
-      const slide = projList.children[Math.min(i, projList.children.length - 1)];
-      if (slide) projList.style.height = (slide.offsetHeight + 8) + 'px';
-    };
-    // Featured slider: every card matches the first card's height; longer ones clamp behind "…More"
-    const slides = [...projList.querySelectorAll('.project-feature')];
-    slides.slice(1).forEach(slide => {
-      const story = slide.querySelector('.feature-story');
-      if (!story) return;
-      const more = document.createElement('button');
-      more.type = 'button';
-      more.className = 'feature-more';
-      more.textContent = '…More';
-      more.addEventListener('click', () => {
-        const open = slide.classList.toggle('is-expanded');
-        more.textContent = open ? 'Less' : '…More';
-        sizeSlides();
-        if (!open) slide.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  /* ── Projects: "closer look" pills switch the stage and the full story ── */
+  const closer = document.querySelector('.closer');
+  if (closer) {
+    const items = [...closer.querySelectorAll('.closer-item')];
+    const medias = [...closer.querySelectorAll('.closer-media')];
+    const stories = [...document.querySelectorAll('.closer-story')];
+    // i = -1 closes every pill; the stage keeps showing the last image
+    const select = i => {
+      if (i < 0) {
+        items.forEach(item => { item.classList.remove('is-open'); item.querySelector('.closer-pill').setAttribute('aria-expanded', 'false'); });
+        stories.forEach(st => { st.hidden = true; st.open = false; });
+        return;
+      }
+      items.forEach((item, k) => {
+        item.classList.toggle('is-open', k === i);
+        item.querySelector('.closer-pill').setAttribute('aria-expanded', String(k === i));
       });
-      story.after(more);
-    });
-    const sizeSlides = () => {
-      if (!slides.length) return;
-      slides.forEach(s => { s.classList.remove('is-clamped', 'has-more'); s.style.height = ''; s.style.minHeight = ''; });
-      const ref = slides[0].offsetHeight;
-      slides.slice(1).forEach(s => {
-        s.classList.toggle('has-more', s.offsetHeight > ref + 1);
-        if (s.classList.contains('is-expanded')) return;
-        s.style.minHeight = ref + 'px';
-        if (s.classList.contains('has-more')) {
-          s.classList.add('is-clamped');
-          s.style.height = ref + 'px';
-        }
-      });
-      fitHeight();
+      medias.forEach((m, k) => m.classList.toggle('is-active', k === i));
+      stories.forEach((st, k) => { st.hidden = k !== i; if (k !== i) st.open = false; });
     };
+    items.forEach((item, i) => item.querySelector('.closer-pill').addEventListener('click', () => select(item.classList.contains('is-open') ? -1 : i)));
+  }
 
-    projList.addEventListener('scroll', () => { updateArrows(); fitHeight(); }, { passive: true });
-    window.addEventListener('resize', () => { updateArrows(); sizeSlides(); });
-    window.addEventListener('load', sizeSlides);
-    updateArrows();
-    sizeSlides();
-  });
-
-  /* ── Bento "Details" links jump to the matching featured slide ── */
-  document.querySelectorAll('[data-slide]').forEach(link => {
-    link.addEventListener('click', () => {
-      const list = document.querySelector('.feature-list');
-      const slide = list && list.children[Number(link.dataset.slide)];
-      if (slide) list.scrollTo({ left: slide.offsetLeft - list.offsetLeft, behavior: 'smooth' });
+  /* ── Tech stack tabs (arrow keys move between tabs) ── */
+  const tabs = [...document.querySelectorAll('.stack-tab')];
+  const showTab = (i, focus) => {
+    tabs.forEach((t, k) => {
+      t.setAttribute('aria-selected', String(k === i));
+      t.tabIndex = k === i ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = k !== i;
+    });
+    if (focus) tabs[i].focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => showTab(i));
+    t.addEventListener('keydown', e => {
+      const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (step) { e.preventDefault(); showTab((i + step + tabs.length) % tabs.length, true); }
     });
   });
+  if (tabs.length) showTab(0);
+
+  /* ── Experience: expand / collapse all ── */
+  const xpRows = [...document.querySelectorAll('.xp-row')];
+  const xpButtons = [...document.querySelectorAll('.xp-all')];
+  const syncXp = () => {
+    const openCount = xpRows.filter(r => r.open).length;
+    xpButtons.forEach(b => { b.disabled = b.dataset.open === 'true' ? openCount === xpRows.length : openCount === 0; });
+  };
+  xpButtons.forEach(b => b.addEventListener('click', () => { xpRows.forEach(r => { r.open = b.dataset.open === 'true'; }); syncXp(); }));
+  xpRows.forEach(r => r.addEventListener('toggle', syncXp));
+  syncXp();
 
   /* ── Lightbox for diagrams (plain link to the image without JS) ── */
   let lightbox;

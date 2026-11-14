@@ -64,31 +64,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
   <!-- fonts load without blocking the first paint -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" /></noscript>
 </head>
 <body>
 
-  <div class="paper-texture"></div>
-
   <!-- NAV -->
   <nav id="navbar">
-    <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <a href="#top" class="nav-logo" aria-label="Back to top">
       <span class="nav-wordmark">Prajwal <em>Sathyanarayana</em></span>
-    </div>
+    </a>
     <ul class="nav-links">
       <li><a href="#projects" class="nav-link">Projects</a></li>
       <li><a href="#experience" class="nav-link">Experience</a></li>
       <li><a href="#publications" class="nav-link">Publications</a></li>
     </ul>
     <a href="Prajwal Sathyanarayana Resume.pdf" download class="nav-resume" id="navResume" data-goatcounter-click="resume-nav">&#8595; Resume</a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" inert>
     <ul>
       <li><a href="#projects" class="mob-link">Projects</a></li>
       <li><a href="#experience" class="mob-link">Experience</a></li>
@@ -102,17 +100,17 @@
     <div class="container">
       <div class="bento">
 
-        <div class="tile tile-hero reveal">
+        <div class="tile tile-hero">
           <span class="tile-kicker">AI Engineering &amp; Machine Learning</span>
           <h1 class="bento-name">Prajwal <em>Sathyanarayana</em></h1>
           <p class="bento-headline">AI Engineer building production-grade ML systems, from fine-tuned models to deployed agent pipelines.</p>
           <p class="bento-bio">M.S. Data Science, University of Arizona (GPA 3.9). 3+ years across fintech, healthcare, research and edtech. Open to full-time AI Engineer, ML Engineer and Applied Scientist roles.</p>
           <div class="bento-actions">
             <a href="#projects" class="bento-btn">View Projects &darr;</a>
-            <a href="Prajwal Sathyanarayana Resume.pdf" download class="bento-btn is-ghost" data-goatcounter-click="resume-hero">&#8595; Resume</a>
             <a href="mailto:prajwalsathyanarayana21@gmail.com" class="bento-btn is-ghost">Email me &rarr;</a>
           </div>
           <div class="bento-links">
+            <a href="Prajwal Sathyanarayana Resume.pdf" download data-goatcounter-click="resume-hero">&#8595; Resume</a>
             <a href="https://linkedin.com/in/prajwalsathyanarayana" target="_blank">LinkedIn</a>
             <a href="https://github.com/PrajwalSathyanarayana" target="_blank">GitHub</a>
             <a href="https://medium.com/@prajwalsathyanarayana21" target="_blank">Medium</a>
@@ -121,7 +119,7 @@
           </div>
         </div>
 
-        <div class="tile tile-path reveal">
+        <div class="tile tile-path">
           <span class="tile-kicker">Path &middot; 3+ years</span>
           <ol class="path">
             <li class="is-now"><span class="path-when">Now</span><b>LLM &amp; agent systems</b><span>Bank Agent Automation, SmolLM2 fine-tuning</span></li>
@@ -131,68 +129,38 @@
           </ol>
         </div>
 
-        <div class="tile tile-feature reveal">
-          <span class="tile-kicker">Featured &middot; Agentic AI</span>
-          <h2>Bank Agent <em>Automation</em></h2>
-          <p>An LLM learns a task on a legacy banking portal once. After that the task replays in seconds with no model in the loop.</p>
-          <div class="tile-stats">
-            <div><b>2&ndash;4 s</b><span>Replay, no model</span></div>
-            <div><b>$0.19&ndash;0.33</b><span>To learn a task</span></div>
-            <div><b>1,222</b><span>Tests</span></div>
-          </div>
-          <div class="tile-links">
-            <a href="#projects" data-slide="0" class="tile-cta">Details &darr;</a>
-            <a href="https://medium.com/@prajwalsathyanarayana21/discovery-once-replay-forever-automating-a-bank-portal-without-an-api-e1c49a931782" target="_blank">Medium &rarr;</a>
-            <a href="https://github.com/PrajwalSathyanarayana/bank-agent-automation" target="_blank">GitHub &rarr;</a>
-          </div>
-        </div>
-
-        <div class="tile tile-feature reveal">
-          <span class="tile-kicker">Featured &middot; Production ML</span>
-          <h2>Manhattan Taxi <em>Fare Estimation</em></h2>
-          <p>Upfront fares for NYC yellow and green taxis: LightGBM served by a load-balanced FastAPI service on DigitalOcean.</p>
-          <div class="tile-stats">
-            <div><b>92.2%</b><span>R&sup2; on dollar fare</span></div>
-            <div><b>$5.71</b><span>RMSE per trip</span></div>
-            <div class="has-tip" tabindex="0" data-tip="Load balancer $12 + 2 droplets $14 + managed Postgres $15 + Spaces $5; VPC and Mapbox free tier $0 = $46/month"><b>~$46</b><span>Infra per month</span><span class="sr-only"> (Load balancer $12 + 2 droplets $14 + managed Postgres $15 + Spaces $5; VPC and Mapbox free tier $0 = $46/month)</span></div>
-          </div>
-          <div class="tile-links">
-            <a href="#projects" data-slide="1" class="tile-cta">Details &darr;</a>
-            <a href="https://github.com/PrajwalSathyanarayana/Fare-Estimation-Pipeline-Manhattan-NYC-TLC-Data" target="_blank">GitHub &rarr;</a>
-          </div>
-        </div>
-
         <div class="tile tile-building reveal">
           <span class="tile-kicker">Now Building</span>
           <div class="building-grid">
             <div class="building-item">
               <h3>SmolLM2-360M Medical Q&amp;A Fine-Tuning</h3>
               <p>Can a fine-tuned 360M model recover a 7B model's medical Q&amp;A performance at ~20&times; lower inference cost? Full SFT on ~187K pairs, benchmarked on ROUGE.</p>
-              <a href="https://github.com/PrajwalSathyanarayana/smollm2-medical-sft" target="_blank">GitHub &rarr;</a>
+              <a href="https://github.com/PrajwalSathyanarayana/smollm2-medical-sft" target="_blank">GitHub &nearr;</a>
             </div>
             <div class="building-item">
               <h3>AI Data Science Copilot</h3>
               <p>CSV in, analyst-style report out. Python computes every statistic and the LLM only interprets; a chatbot routes questions to text-to-SQL or RAG.</p>
-              <a href="https://github.com/PrajwalSathyanarayana/Data-Science-CoPilot" target="_blank">GitHub &rarr;</a>
+              <a href="https://github.com/PrajwalSathyanarayana/Data-Science-CoPilot" target="_blank">GitHub &nearr;</a>
             </div>
           </div>
         </div>
 
         <div class="tile tile-stack reveal">
           <span class="tile-kicker">Tech Stack</span>
-          <div class="stack-row">
+          <div class="stack-tabs" role="tablist" aria-label="Tech stack groups"><button type="button" role="tab" class="stack-tab" id="stack-tab-0" aria-controls="stack-panel-0" aria-selected="true">AI &amp; LLM</button><button type="button" role="tab" class="stack-tab" id="stack-tab-1" aria-controls="stack-panel-1" aria-selected="false" tabindex="-1">Languages</button><button type="button" role="tab" class="stack-tab" id="stack-tab-2" aria-controls="stack-panel-2" aria-selected="false" tabindex="-1">Cloud</button><button type="button" role="tab" class="stack-tab" id="stack-tab-3" aria-controls="stack-panel-3" aria-selected="false" tabindex="-1">Product</button></div>
+          <div class="stack-row" role="tabpanel" id="stack-panel-0" aria-labelledby="stack-tab-0">
             <h3>AI &amp; LLM Systems</h3>
             <div class="stack-tags"><span class="tag-item has-tip" tabindex="0" data-tip="full SFT, HuggingFace transformers/trl/peft/accelerate">LLM Fine-Tuning<span class="sr-only"> (full SFT, HuggingFace transformers/trl/peft/accelerate)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="text-to-SQL + embedding RAG hybrid, query routing">RAG<span class="sr-only"> (text-to-SQL + embedding RAG hybrid, query routing)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="multi-mode orchestration, discovery/replay architectures">Agentic Workflows<span class="sr-only"> (multi-mode orchestration, discovery/replay architectures)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="for vision-driven agents">Prompt Engineering<span class="sr-only"> (for vision-driven agents)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="Gemini Vision, document classification/routing">Multimodal AI<span class="sr-only"> (Gemini Vision, document classification/routing)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="ROUGE, R&sup2;, RMSE, statistical significance testing">Model Evaluation<span class="sr-only"> (ROUGE, R&sup2;, RMSE, statistical significance testing)</span></span></div>
           </div>
-          <div class="stack-row">
+          <div class="stack-row" role="tabpanel" id="stack-panel-1" aria-labelledby="stack-tab-1">
             <h3>Languages &amp; Libraries</h3>
             <div class="stack-tags"><span class="tag-item">Python</span><span class="tag-item">SQL</span><span class="tag-item">PyTorch</span><span class="tag-item has-tip" tabindex="0" data-tip="transformers, datasets">Hugging Face<span class="sr-only"> (transformers, datasets)</span></span><span class="tag-item">Scikit-Learn</span><span class="tag-item">LightGBM</span><span class="tag-item">XGBoost</span><span class="tag-item">Pandas</span><span class="tag-item">NumPy</span><span class="tag-item">FastAPI</span><span class="tag-item">Flask</span><span class="tag-item has-tip" tabindex="0" data-tip="schema normalization, feature engineering">ETL<span class="sr-only"> (schema normalization, feature engineering)</span></span></div>
           </div>
-          <div class="stack-row">
+          <div class="stack-row" role="tabpanel" id="stack-panel-2" aria-labelledby="stack-tab-2">
             <h3>Cloud &amp; DevOps</h3>
             <div class="stack-tags"><span class="tag-item">AWS (SageMaker, Lambda, RDS)</span><span class="tag-item has-tip" tabindex="0" data-tip="containerized model serving">Docker<span class="sr-only"> (containerized model serving)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="feature stores, prediction caching">PostgreSQL<span class="sr-only"> (feature stores, prediction caching)</span></span><span class="tag-item">DuckDB</span><span class="tag-item has-tip" tabindex="0" data-tip="DigitalOcean, high-availability serving">Load Balancing<span class="sr-only"> (DigitalOcean, high-availability serving)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="artifact storage, semantic versioning">Model Registry<span class="sr-only"> (artifact storage, semantic versioning)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="deterministic, model-free test suites">ML Testing<span class="sr-only"> (deterministic, model-free test suites)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="execution tracing, audit logging">Observability<span class="sr-only"> (execution tracing, audit logging)</span></span></div>
           </div>
-          <div class="stack-row">
+          <div class="stack-row" role="tabpanel" id="stack-panel-3" aria-labelledby="stack-tab-3">
             <h3>Product &amp; Collaboration</h3>
             <div class="stack-tags"><span class="tag-item has-tip" tabindex="0" data-tip="rule-based safety layers independent of the model">Guardrail Design<span class="sr-only"> (rule-based safety layers independent of the model)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="documented, defensible decisions">Engineering Trade-offs<span class="sr-only"> (documented, defensible decisions)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="bank operations, healthcare analytics, education workflows">Cross-functional Work<span class="sr-only"> (bank operations, healthcare analytics, education workflows)</span></span><span class="tag-item has-tip" tabindex="0" data-tip="fast iteration on failure cases">Edge-Case Handling<span class="sr-only"> (fast iteration on failure cases)</span></span></div>
           </div>
@@ -205,7 +173,7 @@
           <p class="research-top">Most cited: <em>Automatic Medication Dispensing System using ML, IoT and Cloud Computing</em> (7)</p>
           <div class="tile-links">
             <a href="#publications" class="tile-cta">All papers &darr;</a>
-            <a href="https://scholar.google.com/citations?user=8vROA_4AAAAJ&hl=en" target="_blank">Scholar &rarr;</a>
+            <a href="https://scholar.google.com/citations?user=8vROA_4AAAAJ&hl=en" target="_blank">Scholar &nearr;</a>
           </div>
         </div>
 
@@ -230,67 +198,104 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-num">01</span>
-        <span class="section-rule"></span>
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">Projects. <em>Built to ship.</em></h2>
       </div>
 
-      <div class="projects-scroller feature-scroller reveal">
-        <button type="button" class="proj-arrow proj-arrow-left" aria-label="Previous featured project">&larr;</button>
-        <div class="projects-list feature-list">
-
-      <article class="project-feature">
-        <div class="feature-head">
-          <span class="skill-kicker">01 / 04 &middot; Agentic AI</span>
-          <h3>Bank Agent <em>Automation</em></h3>
-          <p class="feature-sub">An LLM learns a task on a legacy banking portal once. After that the task replays with no model in the loop.</p>
-          <div class="feature-stats">
+      <div class="closer reveal">
+        <div class="closer-list">
+          <div class="closer-item is-open">
+            <button type="button" class="closer-pill" id="cp-btn-0" aria-expanded="true" aria-controls="cp-panel-0">
+              <span class="closer-plus" aria-hidden="true"></span>
+              <span class="closer-name">Bank Agent Automation</span>
+            </button>
+            <div class="closer-panel" id="cp-panel-0" role="region" aria-labelledby="cp-btn-0">
+              <div class="closer-panel-inner">
+                <span class="skill-kicker">01 / 04 &middot; Agentic AI</span>
+                <p class="closer-sub">An LLM learns a task on a legacy banking portal once. After that the task replays with no model in the loop.</p>
+                <div class="feature-stats">
             <div class="feature-stat"><span class="feature-stat-val">2&ndash;4 s</span><span class="feature-stat-label">Replay, no model</span></div>
             <div class="feature-stat"><span class="feature-stat-val">$0.19&ndash;0.33</span><span class="feature-stat-label">To learn a task</span></div>
             <div class="feature-stat"><span class="feature-stat-val">1,222</span><span class="feature-stat-label">Tests, none call the model</span></div>
           </div>
-          <a href="img/bank-agent.jpg" target="_blank" class="feature-shot" data-lightbox aria-label="Enlarge the Bank Agent architecture diagram">
+                <div class="feature-links">
+              <a href="https://medium.com/@prajwalsathyanarayana21/discovery-once-replay-forever-automating-a-bank-portal-without-an-api-e1c49a931782" target="_blank" class="feature-cta">Read on Medium &nearr;</a>
+              <a href="https://github.com/PrajwalSathyanarayana/bank-agent-automation" target="_blank" class="pub-link">GitHub &nearr;</a>
+            </div>
+              </div>
+            </div>
+          </div>
+          <div class="closer-item">
+            <button type="button" class="closer-pill" id="cp-btn-1" aria-expanded="false" aria-controls="cp-panel-1">
+              <span class="closer-plus" aria-hidden="true"></span>
+              <span class="closer-name">Manhattan Taxi Fare Estimation</span>
+            </button>
+            <div class="closer-panel" id="cp-panel-1" role="region" aria-labelledby="cp-btn-1">
+              <div class="closer-panel-inner">
+                <span class="skill-kicker">02 / 04 &middot; Production ML</span>
+                <p class="closer-sub">A cloud-native estimator that gives NYC yellow and green taxi riders an upfront fare before the ride, from pickup and dropoff zone, time and passenger count.</p>
+                <div class="feature-stats">
+            <div class="feature-stat"><span class="feature-stat-val">92.2%</span><span class="feature-stat-label">R&sup2; on dollar fare</span></div>
+            <div class="feature-stat"><span class="feature-stat-val">$5.71</span><span class="feature-stat-label">Avg. error per trip (RMSE)</span></div>
+            <div class="feature-stat has-tip" tabindex="0" data-tip="Load balancer $12 + 2 droplets $14 + managed Postgres $15 + Spaces $5; VPC and Mapbox free tier $0 = $46/month"><span class="feature-stat-val">~$46</span><span class="feature-stat-label">Infra cost per month</span><span class="sr-only"> (Load balancer $12 + 2 droplets $14 + managed Postgres $15 + Spaces $5; VPC and Mapbox free tier $0 = $46/month)</span></div>
+          </div>
+                <div class="feature-links">
+              <a href="https://github.com/PrajwalSathyanarayana/Fare-Estimation-Pipeline-Manhattan-NYC-TLC-Data" target="_blank" class="feature-cta">View on GitHub &nearr;</a>
+            </div>
+              </div>
+            </div>
+          </div>
+          <div class="closer-item">
+            <button type="button" class="closer-pill" id="cp-btn-2" aria-expanded="false" aria-controls="cp-panel-2">
+              <span class="closer-plus" aria-hidden="true"></span>
+              <span class="closer-name">Markets Forecast to 2026</span>
+            </button>
+            <div class="closer-panel" id="cp-panel-2" role="region" aria-labelledby="cp-btn-2">
+              <div class="closer-panel-inner">
+                <span class="skill-kicker">03 / 04 &middot; Classical ML</span>
+                <p class="closer-sub">Forecasting stock, cryptocurrency and commodity prices through 2026 with linear regression on four years of daily prices, with Apple as the worked example.</p>
+                <div class="feature-stats">
+            <div class="feature-stat"><span class="feature-stat-val">0.765</span><span class="feature-stat-label">R&sup2; on Apple</span></div>
+            <div class="feature-stat"><span class="feature-stat-val">1,011</span><span class="feature-stat-label">Trading days</span></div>
+            <div class="feature-stat"><span class="feature-stat-val">$240.74</span><span class="feature-stat-label">Apple forecast, Jan 2026</span></div>
+          </div>
+                <div class="feature-links">
+              <a href="https://github.com/PrajwalSathyanarayana/Predictive-Modeling-for-Financial-Markets" target="_blank" class="feature-cta">View on GitHub &nearr;</a>
+            </div>
+              </div>
+            </div>
+          </div>
+          <div class="closer-item">
+            <button type="button" class="closer-pill" id="cp-btn-3" aria-expanded="false" aria-controls="cp-panel-3">
+              <span class="closer-plus" aria-hidden="true"></span>
+              <span class="closer-name">EPL Match Data Analysis</span>
+            </button>
+            <div class="closer-panel" id="cp-panel-3" role="region" aria-labelledby="cp-btn-3">
+              <div class="closer-panel-inner">
+                <span class="skill-kicker">04 / 04 &middot; Data Science</span>
+                <p class="closer-sub">An exploratory visualization project, built as an interactive Shiny dashboard, testing whether weather and betting odds predict EPL match outcomes.</p>
+                <div class="feature-stats">
+            <div class="feature-stat"><span class="feature-stat-val">~85%</span><span class="feature-stat-label">Winners picked by betting odds</span></div>
+            <div class="feature-stat"><span class="feature-stat-val">3</span><span class="feature-stat-label">Sources merged</span></div>
+            <div class="feature-stat"><span class="feature-stat-val">2021&ndash;23</span><span class="feature-stat-label">EPL seasons</span></div>
+          </div>
+                <div class="feature-links">
+              <a href="https://info-526-f24.github.io/project-01-MildCats/" target="_blank" class="feature-cta">View Project &nearr;</a>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="closer-stage">
+          <div class="closer-media is-active" data-i="0">
+            <a href="img/bank-agent.jpg" target="_blank" class="feature-shot" data-lightbox aria-label="Enlarge the Bank Agent architecture diagram">
             <picture>
               <source srcset="img/bank-agent.webp" type="image/webp">
               <img src="img/bank-agent.jpg" width="1233" height="848" loading="lazy" alt="Bank Agent architecture: a request goes to Intake, then a Router checks for a saved, trusted artifact. If none exists, Discovery observes, decides, checks, records and acts, then scans, signs, versions and saves an artifact. If one exists, Replay loads it, verifies the signature, finds each element, passes the safety gate, acts and checks. Both engines share a safety gate, browser surface, human handoff and evidence logger.">
             </picture>
           </a>
-        </div>
-        <div class="feature-body">
-          <dl class="feature-story">
-            <div class="feature-row">
-              <dt>Problem</dt>
-              <dd>Credit unions run back-office portals with no API, and staff move money through them by hand. Letting a model click every time is too slow, too costly and not predictable enough for payments.</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Built</dt>
-              <dd>A <strong>Discovery</strong> mode where Claude drives a real browser and every action is saved as a typed, <strong>Ed25519-signed</strong> artifact, and a <strong>Replay</strong> mode that runs that artifact deterministically. Payments are checked against the request before the click, and a live handoff gives a person the browser when the run can't safely continue.</dd>
-            </div>
-            <div class="feature-row">
-              <dt>Result</dt>
-              <dd>Five credit-union tasks, including bill pay, learned once and replayed in <strong>2&ndash;4 seconds at zero model cost</strong>. Three payments in a row each moved exactly the amount, and a tampered artifact is refused before the browser opens.</dd>
-            </div>
-          </dl>
-          <div class="feature-foot">
-            <div class="project-tags"><span>Python</span><span>Claude API</span><span>Playwright</span><span>Pydantic v2</span><span>Flask</span></div>
-            <div class="feature-links">
-              <a href="https://medium.com/@prajwalsathyanarayana21/discovery-once-replay-forever-automating-a-bank-portal-without-an-api-e1c49a931782" target="_blank" class="feature-cta">Read on Medium &rarr;</a>
-              <a href="https://github.com/PrajwalSathyanarayana/bank-agent-automation" target="_blank" class="pub-link">GitHub &rarr;</a>
-            </div>
           </div>
-        </div>
-      </article>
-
-      <article class="project-feature">
-        <div class="feature-head">
-          <span class="skill-kicker">02 / 04 &middot; Production ML</span>
-          <h3>Manhattan Taxi <em>Fare Estimation</em></h3>
-          <p class="feature-sub">A cloud-native estimator that gives NYC yellow and green taxi riders an upfront fare before the ride, from pickup and dropoff zone, time and passenger count.</p>
-          <div class="feature-stats">
-            <div class="feature-stat"><span class="feature-stat-val">92.2%</span><span class="feature-stat-label">R&sup2; on dollar fare</span></div>
-            <div class="feature-stat"><span class="feature-stat-val">$5.71</span><span class="feature-stat-label">Avg. error per trip (RMSE)</span></div>
-            <div class="feature-stat has-tip" tabindex="0" data-tip="Load balancer $12 + 2 droplets $14 + managed Postgres $15 + Spaces $5; VPC and Mapbox free tier $0 = $46/month"><span class="feature-stat-val">~$46</span><span class="feature-stat-label">Infra cost per month</span><span class="sr-only"> (Load balancer $12 + 2 droplets $14 + managed Postgres $15 + Spaces $5; VPC and Mapbox free tier $0 = $46/month)</span></div>
-          </div>
-          <div class="feature-shots">
+          <div class="closer-media" data-i="1">
+            <div class="feature-shots">
             <a href="img/fare-estimation.jpg" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the infrastructure diagram">
               <picture>
                 <source srcset="img/fare-estimation.webp" type="image/webp">
@@ -306,8 +311,68 @@
               <span class="shot-label">Estimator UI</span>
             </a>
           </div>
+          </div>
+          <div class="closer-media" data-i="2">
+            <div class="feature-shots">
+            <a href="img/markets-apple.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the Apple extrapolation chart">
+              <picture>
+                <source srcset="img/markets-apple.webp" type="image/webp">
+                <img src="img/markets-apple.png" width="850" height="563" loading="lazy" alt="Apple stock price, January 2020 to January 2024, as daily points with a fitted regression line, extended as an extrapolated line to about $240 in early 2026.">
+              </picture>
+              <span class="shot-label">Apple &middot; 2026 forecast</span>
+            </a>
+            <a href="img/markets-bitcoin.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the Bitcoin extrapolation chart">
+              <picture>
+                <source srcset="img/markets-bitcoin.webp" type="image/webp">
+                <img src="img/markets-bitcoin.png" width="868" height="563" loading="lazy" alt="Bitcoin price, 2020 to 2024, as daily points swinging between about $5,000 and $67,000, with a fitted regression line extrapolated to about $43,000 in 2026.">
+              </picture>
+              <span class="shot-label">Bitcoin &middot; same model</span>
+            </a>
+          </div>
+          </div>
+          <div class="closer-media" data-i="3">
+            <div class="feature-shots is-stacked">
+            <a href="img/epl-app.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the Shiny app screenshot">
+              <picture>
+                <source srcset="img/epl-app.webp" type="image/webp">
+                <img src="img/epl-app.png" width="1200" height="530" loading="lazy" alt="The Shiny app with Arsenal and temperature extremes selected: a lollipop chart of betting odds by match date, each match marked with the opponent's crest, green for wins and red for losses, with extreme-weather days shaded.">
+              </picture>
+              <span class="shot-label">Shiny app &middot; odds vs. outcomes</span>
+            </a>
+            <a href="img/epl-draws.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the draws-by-temperature chart">
+              <picture>
+                <source srcset="img/epl-draws.webp" type="image/webp">
+                <img src="img/epl-draws.png" width="1200" height="322" loading="lazy" alt="Match outcomes and draw probability by temperature: stacked home win, draw and away win shares, with the observed and smoothed draw rate rising at both cold and hot extremes.">
+              </picture>
+              <span class="shot-label">Draws vs. temperature</span>
+            </a>
+          </div>
+          </div>
         </div>
-        <div class="feature-body">
+      </div>
+      <details class="closer-story reveal" data-i="0">
+        <summary><span class="closer-plus" aria-hidden="true"></span>Read the full story: <span class="closer-story-title">Bank Agent <em>Automation</em></span></summary>
+        <div class="closer-story-body">
+          <dl class="feature-story">
+            <div class="feature-row">
+              <dt>Problem</dt>
+              <dd>Credit unions run back-office portals with no API, and staff move money through them by hand. Letting a model click every time is too slow, too costly and not predictable enough for payments.</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Built</dt>
+              <dd>A <strong>Discovery</strong> mode where Claude drives a real browser and every action is saved as a typed, <strong>Ed25519-signed</strong> artifact, and a <strong>Replay</strong> mode that runs that artifact deterministically. Payments are checked against the request before the click, and a live handoff gives a person the browser when the run can't safely continue.</dd>
+            </div>
+            <div class="feature-row">
+              <dt>Result</dt>
+              <dd>Five credit-union tasks, including bill pay, learned once and replayed in <strong>2&ndash;4 seconds at zero model cost</strong>. Three payments in a row each moved exactly the amount, and a tampered artifact is refused before the browser opens.</dd>
+            </div>
+          </dl>
+          <div class="project-tags"><span>Python</span><span>Claude API</span><span>Playwright</span><span>Pydantic v2</span><span>Flask</span></div>
+        </div>
+      </details>
+      <details class="closer-story reveal" data-i="1" hidden>
+        <summary><span class="closer-plus" aria-hidden="true"></span>Read the full story: <span class="closer-story-title">Manhattan Taxi <em>Fare Estimation</em></span></summary>
+        <div class="closer-story-body">
           <dl class="feature-story">
             <div class="feature-row">
               <dt>Problem</dt>
@@ -330,43 +395,12 @@
               <dd><strong>R&sup2; 92.2%</strong> and <strong>RMSE $5.71</strong> on dollar fare; R&sup2; 89.2% and RMSE 0.169 on log fare. Dropoff zone, pickup zone and trip distance are the top features by importance.</dd>
             </div>
           </dl>
-          <div class="feature-foot">
-            <div class="project-tags"><span>LightGBM</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span><span>DigitalOcean</span></div>
-            <div class="feature-links">
-              <a href="https://github.com/PrajwalSathyanarayana/Fare-Estimation-Pipeline-Manhattan-NYC-TLC-Data" target="_blank" class="feature-cta">View on GitHub &rarr;</a>
-            </div>
-          </div>
+          <div class="project-tags"><span>LightGBM</span><span>FastAPI</span><span>PostgreSQL</span><span>Docker</span><span>DigitalOcean</span></div>
         </div>
-      </article>
-
-      <article class="project-feature">
-        <div class="feature-head">
-          <span class="skill-kicker">03 / 04 &middot; Classical ML</span>
-          <h3>Predicting the Future: <em>Where Will Stocks, Cryptos, and Commodities Stand by 2026?</em></h3>
-          <p class="feature-sub">Forecasting stock, cryptocurrency and commodity prices through 2026 with linear regression on four years of daily prices, with Apple as the worked example.</p>
-          <div class="feature-stats">
-            <div class="feature-stat"><span class="feature-stat-val">0.765</span><span class="feature-stat-label">R&sup2; on Apple</span></div>
-            <div class="feature-stat"><span class="feature-stat-val">1,011</span><span class="feature-stat-label">Trading days</span></div>
-            <div class="feature-stat"><span class="feature-stat-val">$240.74</span><span class="feature-stat-label">Apple forecast, Jan 2026</span></div>
-          </div>
-          <div class="feature-shots">
-            <a href="img/markets-apple.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the Apple extrapolation chart">
-              <picture>
-                <source srcset="img/markets-apple.webp" type="image/webp">
-                <img src="img/markets-apple.png" width="850" height="563" loading="lazy" alt="Apple stock price, January 2020 to January 2024, as daily points with a fitted regression line, extended as an extrapolated line to about $240 in early 2026.">
-              </picture>
-              <span class="shot-label">Apple &middot; 2026 forecast</span>
-            </a>
-            <a href="img/markets-bitcoin.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the Bitcoin extrapolation chart">
-              <picture>
-                <source srcset="img/markets-bitcoin.webp" type="image/webp">
-                <img src="img/markets-bitcoin.png" width="868" height="563" loading="lazy" alt="Bitcoin price, 2020 to 2024, as daily points swinging between about $5,000 and $67,000, with a fitted regression line extrapolated to about $43,000 in 2026.">
-              </picture>
-              <span class="shot-label">Bitcoin &middot; same model</span>
-            </a>
-          </div>
-        </div>
-        <div class="feature-body">
+      </details>
+      <details class="closer-story reveal" data-i="2" hidden>
+        <summary><span class="closer-plus" aria-hidden="true"></span>Read the full story: <span class="closer-story-title">Predicting the Future: <em>Where Will Stocks, Cryptos, and Commodities Stand by 2026?</em></span></summary>
+        <div class="closer-story-body">
           <dl class="feature-story">
             <div class="feature-row">
               <dt>Question</dt>
@@ -385,43 +419,12 @@
               <dd>For Apple, <strong>R&sup2; = 0.765</strong> (time alone explains 76.5% of price variance), MSE = 266.98. Price rises <strong>~$0.068/day</strong> (p&nbsp;&lt;&nbsp;0.05, 95% CI $0.066&ndash;$0.071) from an intercept of $90.84 on Jan 2, 2020 (95% CI $88.85&ndash;$92.87). Validation: $125.17 predicted vs. $124.85 actual for May 18, 2021, and $200.25 vs. $191.04 for May 20, 2024. Extrapolated forecast: <strong>$240.74</strong> on Jan 2, 2026.</dd>
             </div>
           </dl>
-          <div class="feature-foot">
-            <div class="project-tags"><span>Python</span><span>Linear Regression</span><span>OLS</span><span>Forecasting</span></div>
-            <div class="feature-links">
-              <a href="https://github.com/PrajwalSathyanarayana/Predictive-Modeling-for-Financial-Markets" target="_blank" class="feature-cta">View on GitHub &rarr;</a>
-            </div>
-          </div>
+          <div class="project-tags"><span>Python</span><span>Linear Regression</span><span>OLS</span><span>Forecasting</span></div>
         </div>
-      </article>
-
-      <article class="project-feature">
-        <div class="feature-head">
-          <span class="skill-kicker">04 / 04 &middot; Data Science</span>
-          <h3>Analyzing English Premier League <em>Match Data</em></h3>
-          <p class="feature-sub">An exploratory visualization project, built as an interactive Shiny dashboard, testing whether weather and betting odds predict EPL match outcomes.</p>
-          <div class="feature-stats">
-            <div class="feature-stat"><span class="feature-stat-val">~85%</span><span class="feature-stat-label">Winners picked by betting odds</span></div>
-            <div class="feature-stat"><span class="feature-stat-val">3</span><span class="feature-stat-label">Sources merged</span></div>
-            <div class="feature-stat"><span class="feature-stat-val">2021&ndash;23</span><span class="feature-stat-label">EPL seasons</span></div>
-          </div>
-          <div class="feature-shots is-stacked">
-            <a href="img/epl-app.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the Shiny app screenshot">
-              <picture>
-                <source srcset="img/epl-app.webp" type="image/webp">
-                <img src="img/epl-app.png" width="1200" height="530" loading="lazy" alt="The Shiny app with Arsenal and temperature extremes selected: a lollipop chart of betting odds by match date, each match marked with the opponent's crest, green for wins and red for losses, with extreme-weather days shaded.">
-              </picture>
-              <span class="shot-label">Shiny app &middot; odds vs. outcomes</span>
-            </a>
-            <a href="img/epl-draws.png" target="_blank" class="feature-shot is-small" data-lightbox aria-label="Enlarge the draws-by-temperature chart">
-              <picture>
-                <source srcset="img/epl-draws.webp" type="image/webp">
-                <img src="img/epl-draws.png" width="1200" height="322" loading="lazy" alt="Match outcomes and draw probability by temperature: stacked home win, draw and away win shares, with the observed and smoothed draw rate rising at both cold and hot extremes.">
-              </picture>
-              <span class="shot-label">Draws vs. temperature</span>
-            </a>
-          </div>
-        </div>
-        <div class="feature-body">
+      </details>
+      <details class="closer-story reveal" data-i="3" hidden>
+        <summary><span class="closer-plus" aria-hidden="true"></span>Read the full story: <span class="closer-story-title">Analyzing English Premier League <em>Match Data</em></span></summary>
+        <div class="closer-story-body">
           <dl class="feature-story">
             <div class="feature-row">
               <dt>Question</dt>
@@ -440,18 +443,9 @@
               <dd>Betting odds picked the winner in <strong>about 85%</strong> of matches. Upsets were more likely in extreme weather, especially rain, and draws rose at both temperature extremes, plausibly because extreme weather slows play. There was no conclusive referee bias between home and away teams, though some referees were harsher on away teams overall.</dd>
             </div>
           </dl>
-          <div class="feature-foot">
-            <div class="project-tags"><span>R</span><span>Shiny</span><span>Data Viz</span><span>Data Wrangling</span></div>
-            <div class="feature-links">
-              <a href="https://info-526-f24.github.io/project-01-MildCats/" target="_blank" class="feature-cta">View Project &rarr;</a>
-            </div>
-          </div>
+          <div class="project-tags"><span>R</span><span>Shiny</span><span>Data Viz</span><span>Data Wrangling</span></div>
         </div>
-      </article>
-
-        </div>
-        <button type="button" class="proj-arrow proj-arrow-right" aria-label="Next featured project">&rarr;</button>
-      </div>
+      </details>
     </div>
   </section>
 
@@ -460,9 +454,9 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-num">02</span>
-        <span class="section-rule"></span>
-        <h2 class="section-title">Experience</h2>
+        <h2 class="section-title">Experience. <em>Measured in outcomes.</em></h2>
       </div>
+      <div class="xp-controls"><button type="button" class="xp-all" data-open="true">Expand all</button><button type="button" class="xp-all" data-open="false">Collapse all</button></div>
       <div class="xp-list">
         <details class="xp-row reveal">
           <summary>
@@ -558,8 +552,7 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-num">03</span>
-        <span class="section-rule"></span>
-        <h2 class="section-title">Publications</h2>
+        <h2 class="section-title">Publications. <em>Peer-reviewed at IEEE.</em></h2>
       </div>
       <div class="pub-intro reveal">
         <p>Five IEEE conference papers (2021&ndash;2022) on applied ML and intelligent systems, mostly in healthcare: medication dispensing and hospital service robots, plus OCR-based answer grading and A* navigation.</p>
