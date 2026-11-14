@@ -21,6 +21,25 @@ document.addEventListener('DOMContentLoaded', () => {
     window.goatcounter.count({ path: 'out: ' + url.hostname + url.pathname, title: a.textContent.trim().slice(0, 60), event: true });
   });
 
+  /* ── Theme toggle (head script sets the starting theme) ── */
+  const themeBtn = document.getElementById('themeToggle');
+  const themeMeta = document.querySelector('meta[name=theme-color]');
+  const applyTheme = (t, save) => {
+    document.documentElement.dataset.theme = t;
+    themeMeta.content = t === 'dark' ? '#0b1120' : '#f8fafc';
+    themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    if (save) { try { localStorage.setItem('theme', t); } catch (e) {} }
+  };
+  if (themeBtn) {
+    applyTheme(document.documentElement.dataset.theme || 'light', false);
+    themeBtn.addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true));
+    // Follow system changes until the visitor picks a theme themselves
+    matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      let saved = null; try { saved = localStorage.getItem('theme'); } catch (err) {}
+      if (!saved) applyTheme(e.matches ? 'dark' : 'light', false);
+    });
+  }
+
   /* ── Scroll reveal ── */ 
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {

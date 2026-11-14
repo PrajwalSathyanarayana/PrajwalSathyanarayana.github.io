@@ -1248,3 +1248,85 @@ body.not-found {
   .js .tile-stack { grid-column: span 6; grid-row: auto; }
   .js .tile-research, .js .tile-edu { grid-column: span 3; }
 }
+
+/* ══════════════ DARK THEME (set on <html data-theme>, see the head script) ══════════════ */
+:root[data-theme="dark"] {
+  --white:       #ffffff;
+  --surface:     #111827;
+  --bg:          #0b1120;
+  --bg-alt:      #1e293b;
+  --nav-bg:      rgba(11,17,32,0.82);
+  --dark:        #0f172a;
+  --text:        #e2e8f0;
+  --text-2:      #cbd5e1;
+  --text-3:      #94a3b8;
+  --text-inv:    #f1f5f9;
+  --text-inv-2:  #94a3b8;
+  --accent:      #818cf8;
+  --accent-dark: #a5b4fc;
+  --accent-dim:  #a5b4fc;
+  --accent-bg:   rgba(129,140,248,0.12);
+  --accent-border: rgba(129,140,248,0.35);
+  --border:      #263244;
+  --border-2:    #334155;
+  --shadow-sm:   0 0 0 1px rgba(255,255,255,0.02);
+  --shadow:      0 0 0 1px #334155;
+  --shadow-lg:   0 0 0 1px #3b4a63;
+  color-scheme: dark; }
+[data-theme="dark"] body { background: var(--bg); }
+[data-theme="dark"] .section-tinted { background: #0d1424; }
+[data-theme="dark"] .bento-btn,
+[data-theme="dark"] .feature-cta,
+[data-theme="dark"] .tile-links .tile-cta { background: #6366f1; border-color: #6366f1; color: #fff; }
+[data-theme="dark"] .bento-btn:hover,
+[data-theme="dark"] .feature-cta:hover,
+[data-theme="dark"] .tile-links .tile-cta:hover { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+[data-theme="dark"] .nav-resume:hover { color: #0b1120; }
+[data-theme="dark"] .tile-hero { background: linear-gradient(145deg, #161e3a 0%, #0f172a 70%); border-color: rgba(129,140,248,0.28); }
+[data-theme="dark"] .tile-hero::before { background: radial-gradient(circle, rgba(129,140,248,0.28) 0%, transparent 70%); }
+[data-theme="dark"] .bento-btn.is-ghost { background: transparent; color: var(--text-inv); border-color: rgba(255,255,255,0.22); }
+[data-theme="dark"] #footer { background: #060a14; border-top: 1px solid var(--border); }
+[data-theme="dark"] .feature-shot,
+[data-theme="dark"] .feature-shot.is-small,
+[data-theme="dark"] .lightbox img { background: #e8ebf2; border-color: #334155; }
+[data-theme="dark"] .feature-shot img { filter: brightness(0.92); }
+[data-theme="dark"] .shot-label { background: #1e293b; border-top-color: #334155; }
+[data-theme="dark"] .closer-stage { background: #162033; }
+[data-theme="dark"] .closer-item { background: #1a2436; }
+[data-theme="dark"] .closer-item.is-open { background: var(--surface); box-shadow: 0 0 0 1px #334155; }
+[data-theme="dark"] .closer-item:not(.is-open) .closer-pill:hover { background: #243047; }
+[data-theme="dark"] .closer-plus { background: var(--text); }
+[data-theme="dark"] .closer-plus::before,
+[data-theme="dark"] .closer-plus::after { background: #0b1120; }
+[data-theme="dark"] .closer-item.is-open .closer-plus,
+[data-theme="dark"] .closer-story[open] summary .closer-plus { background: var(--accent); }
+[data-theme="dark"] .stack-tab[aria-selected="true"] { background: #334155; box-shadow: none; }
+[data-theme="dark"] .has-tip::after { background: #e2e8f0; color: #0f172a; }
+[data-theme="dark"] .pub-row:hover { background: rgba(129,140,248,0.08); }
+[data-theme="dark"] .xp-row summary:hover { background: #162033; }
+
+[data-theme="dark"] .bento-name,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .edu-item h3,
+[data-theme="dark"] .footer-name,
+[data-theme="dark"] .footer-cta h2,
+[data-theme="dark"] .nav-wordmark,
+[data-theme="dark"] .closer-story-title { font-weight: 500; }
+
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px;
+  border: 1px solid var(--border); border-radius: 50%;
+  background: none; color: var(--text-3); cursor: pointer;
+  transition: color var(--transition), border-color var(--transition), transform 0.12s var(--ease-out);
+}
+.nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent-border); }
+.theme-toggle:active { transform: scale(0.94); }
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+.not-found .theme-toggle { position: fixed; top: 1rem; right: 1rem; margin: 0; }
+@media (max-width: 768px) { .theme-toggle { width: 44px; height: 44px; } .nav-actions { gap: 0.25rem; } }
